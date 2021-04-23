@@ -1,7 +1,7 @@
 
 # LSTree
 
-LSTree_internal is a digital organoid and lineage tree extraction framework for light sheet movies. Differently from the public LSTree, "_internal" reflects the unchanged version of the framework prior to first submisson on 23.04.2021.
+LSTree is a digital organoid and lineage tree extraction framework for light sheet movies. 
 
 ## Installation
 It is recommended to create a new python environment and install visualization libraries and cuda (GPU support) with conda:
