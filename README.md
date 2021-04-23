@@ -1,7 +1,3 @@
-# TODO
-
-- before making public: remove scratchpads, ERK and manuscript figure notebooks
-- choose/add license
 
 # LSTree
 
