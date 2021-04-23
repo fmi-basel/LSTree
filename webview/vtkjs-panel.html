@@ -1,0 +1,358 @@
+
+<div id="control_container" style='position: absolute; top: 0; left: 0; background-color: white; border-radius: 0px 0px 5px 0px; padding: 5px; z-index: 999;'>
+    Show image <input class='sliceToggle' type="checkbox">
+    <table id="sliceWidgets" style="display: none;">
+        <tr>
+            <td>X</td>
+            <td>
+                <input class='sliceI' type="range" min="0" max="100" step="1" value="50" />
+            </td>
+        </tr>
+        <tr>
+            <td>Y</td>
+            <td>
+                <input class='sliceJ' type="range" min="0" max="100" step="1" value="60" />
+            </td>
+        </tr>
+        <tr>
+            <td>Z</td>
+            <td>
+                <input class='sliceK' type="range" min="0" max="100" step="1" value="40" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="container" style="height: 100%; width: 100%;"></div>
+
+
+<script type="text/javascript" src="https://unpkg.com/vtk.js"></script>
+
+
+<!--
+<script type="text/javascript" src=https://cdn.bokeh.org/bokeh/release/bokeh-0.12.13.min.js></script>
+-->
+
+<script type="text/javascript">
+    // TODO refactor with vtkpan object or something... to avoid global scope
+    
+    // "Imports" ///////////////////////////////////////////////////////
+    vtkColorTransferFunction = vtk.Rendering.Core.vtkColorTransferFunction;
+    vtkColorMaps = vtk.Rendering.Core.vtkColorTransferFunction.vtkColorMaps;
+    
+    vtkRenderWindow = vtk.Rendering.Core.vtkRenderWindow;
+    vtkRenderer = vtk.Rendering.Core.vtkRenderer;
+    openGlvtkRenderWindow = vtk.Rendering.OpenGL.vtkRenderWindow;
+    vtkRenderWindowInteractor = vtk.Rendering.Core.vtkRenderWindowInteractor;
+    vtkInteractorStyleTrackballCamera = vtk.Interaction.Style.vtkInteractorStyleTrackballCamera;
+    
+    vtkXMLPolyDataReader = vtk.IO.XML.vtkXMLPolyDataReader;
+    vtkXMLImageDataReader = vtk.IO.XML.vtkXMLImageDataReader;
+    vtkImageSlice = vtk.Rendering.Core.vtkImageSlice;
+    vtkMapper = vtk.Rendering.Core.vtkMapper;
+    vtkActor = vtk.Rendering.Core.vtkActor;
+    vtkImageMapper = vtk.Rendering.Core.vtkImageMapper
+    
+    // renderer ////////////////////////////////////////////////////////
+    var container = document.querySelector('#container');
+    var renderWindow = vtkRenderWindow.newInstance();
+    var renderer = vtkRenderer.newInstance();
+    var render = renderWindow.render;
+    
+    renderer.setBackground([1., 1., 1.])
+    renderWindow.addRenderer(renderer);
+    
+    var openGLRenderWindow = openGlvtkRenderWindow.newInstance();
+    function updateRenderWindowSize() {
+        var dims = container.getBoundingClientRect();
+        openGLRenderWindow.setSize(
+          Math.floor(dims.width),
+          Math.floor(dims.height)
+        );
+        render()
+    }
+    new ResizeObserver(updateRenderWindowSize).observe(container)
+    openGLRenderWindow.setContainer(container);
+    renderWindow.addView(openGLRenderWindow);
+    
+    var interactor = vtkRenderWindowInteractor.newInstance();
+    interactor.setView(openGLRenderWindow);
+    interactor.initialize();
+    interactor.bindEvents(container);
+    
+    var trackball = vtkInteractorStyleTrackballCamera.newInstance();
+    interactor.setInteractorStyle(trackball);
+    
+    var resetCamera = renderer.resetCamera;
+    
+    var polyReader = vtkXMLPolyDataReader.newInstance();
+    var imageReader = vtkXMLImageDataReader.newInstance();
+    
+    // image orthoviews ////////////////////////////////////////////////
+    var imgPath = '';
+    var imageActorK = vtkImageSlice.newInstance();
+    var imageActorI = vtkImageSlice.newInstance();
+    var imageActorJ = vtkImageSlice.newInstance();
+    
+    var imageMapperK = vtkImageMapper.newInstance();
+    var imageMapperJ = vtkImageMapper.newInstance();
+    var imageMapperI = vtkImageMapper.newInstance();
+    
+    imageActorK.setMapper(imageMapperK);
+    imageActorJ.setMapper(imageMapperJ);
+    imageActorI.setMapper(imageMapperI);
+    
+    document.querySelector('.sliceK').addEventListener('input', (e) => {
+        imageActorK.getMapper().setKSlice(Number(e.target.value));
+        renderWindow.render();
+    });
+    
+    document.querySelector('.sliceI').addEventListener('input', (e) => {
+      imageActorI.getMapper().setISlice(Number(e.target.value));
+      renderWindow.render();
+    });
+    
+    document.querySelector('.sliceJ').addEventListener('input', (e) => {
+      imageActorJ.getMapper().setJSlice(Number(e.target.value));
+      renderWindow.render();
+    });
+    
+    document.querySelector('.sliceToggle').addEventListener('change', updateImage);
+    
+    function updateImage() {
+        const sliceWidgets  = document.querySelector('#sliceWidgets');
+        if(document.querySelector('.sliceToggle').checked){
+            sliceWidgets.style.display = "block";
+            
+            imageReader.setUrl(imgPath).then(() => {
+                const data = imageReader.getOutputData();
+                rgb_array = data.getPointData().getArray(0);
+                data.getPointData().setScalars(rgb_array);
+                const extent = data.getExtent();
+            
+                imageMapperK.setInputData(data);
+                imageMapperK.setKSlice(Math.round(extent[5]/2));
+                
+                imageMapperJ.setInputData(data);
+                imageMapperJ.setJSlice(Math.round(extent[3]/2));
+
+                imageMapperI.setInputData(data);
+                imageMapperI.setISlice(Math.round(extent[1]/2));
+                
+                renderer.addActor(imageActorK);
+                renderer.addActor(imageActorJ);
+                renderer.addActor(imageActorI);
+                
+                //~resetCamera();
+                renderer.resetCameraClippingRange();
+                render();
+                
+                // set widgets range/value
+                ['.sliceI', '.sliceJ', '.sliceK'].forEach((selector, idx) => {
+                const el = document.querySelector(selector);
+                    el.setAttribute('min', Math.round(extent[idx * 2 + 0]));
+                    el.setAttribute('max', Math.round(extent[idx * 2 + 1]));
+                    el.setAttribute('value', Math.round(extent[idx * 2 + 1]/2));
+                });
+            });
+        }
+        else{
+            sliceWidgets.style.display = "none";
+            renderer.removeActor(imageActorK);
+            renderer.removeActor(imageActorJ);
+            renderer.removeActor(imageActorI);
+            render();
+        }
+    }
+    
+    // polydata utils ///////////////////////////////////////////////////
+    function getScalarsNames(polydata){
+        /**
+        Returns a list of names of scalars in polydata
+        **/
+        var scalar_names = [];
+        for (const [key, value] of Object.entries(polydata.getPointData().getArrays())) {
+            scalar_names.push(polydata.getPointData().getArrayName(key))
+            
+        }
+        return scalar_names
+    }
+    
+    function updateLUT(LookupTable, colorArray, polydata){
+        const dataRange = polydata.getPointData().getScalars().getRange();
+        LookupTable.setMappingRange(...dataRange);
+        LookupTable.removeAllPoints()
+
+        if(colorArray.length > 0){
+            for (x of colorArray) {
+                LookupTable.addRGBPoint(...x);
+            }
+        }
+        else{
+            // default to white color
+            LookupTable.addRGBPoint(0, 1.,1.,1.);
+        }
+
+        LookupTable.updateRange();
+        render();
+    }
+    
+    // nuclei mesh /////////////////////////////////////////////////////
+    var nucleiPath = ''
+    var nucleiMapper = vtkMapper.newInstance();
+    var nucleiActor = vtkActor.newInstance();
+    var nucleiLookupTable = vtkColorTransferFunction.newInstance();
+    var nucleiPolydata;
+    
+    nucleiLookupTable.setDiscretize(true);
+    nucleiMapper.setScalarModeToUsePointData();
+    nucleiMapper.setUseLookupTableScalarRange(true);
+    nucleiMapper.setLookupTable(nucleiLookupTable);
+    
+    function updateNucleiMesh(colors=[], opacity=1., representation="Surface"){
+        polyReader.setUrl(nucleiPath).then(() => {
+            nucleiPolydata = polyReader.getOutputData(0);
+            nucleiMapper.setInputData(nucleiPolydata);
+            
+            renderer.addActor(nucleiActor);
+            nucleiActor.setMapper(nucleiMapper);
+            
+            nucleiActor.getProperty().setOpacity(opacity)
+            if(representation=="Wireframe"){
+                nucleiActor.getProperty().setRepresentationToWireframe();
+            }else if(representation=="Surface"){
+                nucleiActor.getProperty().setRepresentationToSurface();
+            }
+            resetCamera();
+            
+            updateLUT(nucleiLookupTable, colors, nucleiPolydata);
+        });
+    }
+    
+    //cell mesh /////////////////////////////////////////////////////
+    var cellPath = ''
+    var cellMapper = vtkMapper.newInstance();
+    var cellActor = vtkActor.newInstance();
+    var cellLookupTable = vtkColorTransferFunction.newInstance();
+    var cellPolydata;
+    
+    cellLookupTable.setDiscretize(true);
+    cellMapper.setScalarModeToUsePointData();
+    cellMapper.setUseLookupTableScalarRange(true);
+    cellMapper.setLookupTable(cellLookupTable);
+    
+    function updateCellMesh(colors=[[0, .1,.1,.1]], opacity=0.1, representation="Wireframe"){
+        polyReader.setUrl(cellPath).then(() => {
+            cellPolydata = polyReader.getOutputData(0);
+            cellMapper.setInputData(cellPolydata);
+            
+            renderer.addActor(cellActor);
+            cellActor.setMapper(cellMapper);
+            
+            cellActor.getProperty().setOpacity(opacity)
+            if(representation=="Wireframe"){
+                cellActor.getProperty().setRepresentationToWireframe();
+            }else if(representation=="Surface"){
+                cellActor.getProperty().setRepresentationToSurface();
+            }
+            resetCamera();
+                             
+            updateLUT(cellLookupTable, colors, cellPolydata);
+        });
+    }
+    
+    ////////////////////////////////////////////////////////////////////
+
+    
+    // add orientation widget
+    function majorAxis(vec3, idxA, idxB) {
+      const axis = [0, 0, 0];
+      const idx = Math.abs(vec3[idxA]) > Math.abs(vec3[idxB]) ? idxA : idxB;
+      const value = vec3[idx] > 0 ? 1 : -1;
+      axis[idx] = value;
+      return axis;
+    }
+    
+    vtkOrientationMarkerWidget = vtk.Interaction.Widgets.vtkOrientationMarkerWidget;
+    vtkAxesActor = vtk.Rendering.Core.vtkAxesActor;
+    vtkWidgetManager = vtk.Widgets.Core.vtkWidgetManager;
+    vtkInteractiveOrientationWidget = vtk.Widgets.Widgets3D.vtkInteractiveOrientationWidget;
+    
+    axes = vtkAxesActor.newInstance()
+    
+    // create orientation widget
+    var orientationWidget = vtkOrientationMarkerWidget.newInstance({
+      actor: axes,
+      interactor: renderWindow.getInteractor(),
+    });
+    orientationWidget.setEnabled(true);
+    orientationWidget.setViewportCorner(
+      vtkOrientationMarkerWidget.Corners.BOTTOM_RIGHT
+    );
+    orientationWidget.setViewportSize(0.15);
+    orientationWidget.setMinPixelSize(75);
+    orientationWidget.setMaxPixelSize(300);
+    
+    // make widget interactive /////////////////////////////////////////
+    widgetManager = vtkWidgetManager.newInstance();
+    widgetManager.setRenderer(orientationWidget.getRenderer())
+    
+
+    widget = vtkInteractiveOrientationWidget.newInstance()
+    widget.placeWidget(axes.getBounds())
+    widget.setBounds(axes.getBounds())
+    widget.setPlaceFactor(1)
+    
+    //~widget.setVisibility(true);
+    //~orientationWidget.updateMarkerOrientation();
+    
+    //~w = widget.getWidgetForView(openGLRenderWindow, renderer);
+    //~renderer.addActor(w);
+    
+    vw = widgetManager.addWidget(widget)
+
+    // Manage user interaction
+    vw.onOrientationChange(({direction}) => {
+      const camera = renderer.getActiveCamera()
+      const focalPoint = camera.getFocalPoint()
+      const position = camera.getPosition()
+      const viewUp = camera.getViewUp()
+
+      const distance = Math.sqrt(
+        Math.pow(position[0] - focalPoint[0], 2) +
+          Math.pow(position[1] - focalPoint[1], 2) +
+          Math.pow(position[2] - focalPoint[2], 2)
+      )
+
+      camera.setPosition(
+        focalPoint[0] + direction[0] * distance,
+        focalPoint[1] + direction[1] * distance,
+        focalPoint[2] + direction[2] * distance
+      )
+
+      if (direction[0]) camera.setViewUp(majorAxis(viewUp, 1, 2))
+      if (direction[1]) camera.setViewUp(majorAxis(viewUp, 0, 2))
+      if (direction[2]) camera.setViewUp(majorAxis(viewUp, 0, 1))
+      
+      orientationWidget.updateMarkerOrientation();
+      renderer.resetCameraClippingRange()
+      render();
+    })
+    
+
+    //~render();
+    
+
+    
+    {{init_code}}
+    
+    //~nucleiPath = 'data/000-20161027-P12-25X-Enterocyst/nuclei_mesh/P12_Ch1-registered-T0001.vtp';
+    //~updateNucleiMesh();
+    
+    //~cellPath = 'data/000-20161027-P12-25X-Enterocyst/cell_mesh/P12_Ch0-registered-T0001.vtp';
+    //~updateCellMesh();
+    
+    //~imgPath = 'data/000-20161027-P12-25X-Enterocyst/rgb_grid/grid-T0001.vti';
+    //~updateImage();
+    
+
+</script>

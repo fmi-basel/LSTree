@@ -1,0 +1,14 @@
+{
+    "mag": 25,
+    "time_interval": 0.1667,
+    "spacing": [
+        2,
+        0.26,
+        0.26
+    ],
+    "wavelengths": {
+        "Channel0": 488,
+        "Channel1": 561,
+        "Channel2": 638
+    }
+}
