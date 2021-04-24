@@ -26,9 +26,12 @@ Acquired movie should first be cropped (see below) to reduce memory requirements
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
 ```
 
+
+**! ** By default this command will run on the test dataset provided. Called _003-20170313-P4-25X-Enterocyst_, using all models trained with intestinal organoid images. The configuration file must be first adapted to the right input paths before using it on new user data.
+
+
 ---
 **NOTE**
-
 If there are samples for which the output files already exist, then these are skipped. To rerun the workflow all necessary intermediate and final outputs should be deleted. That also include training deep learning models, i.e. if a trained model exist, it is used without retraining.
 
 ---
