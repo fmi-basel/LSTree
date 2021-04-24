@@ -27,7 +27,7 @@ LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTas
 ```
 
 
-**! ** By default this command will run on the test dataset provided. Called _003-20170313-P4-25X-Enterocyst_, using all models trained with intestinal organoid images. The configuration file must be first adapted to the right input paths before using it on new user data.
+**!** By default this command will run on the test dataset provided. Called _003-20170313-P4-25X-Enterocyst_, using all models trained with intestinal organoid images. The configuration file must be first adapted to the right input paths before using it on new user data.
 
 
 ---
