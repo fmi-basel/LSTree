@@ -7,8 +7,8 @@ LSTree is a digital organoid and lineage tree extraction framework for light she
 It is recommended to create a new python environment and install visualization libraries and cuda (GPU support) with conda:
 
 ```bash
-conda create -n lstree python=3.7
-conda activate lstree
+conda create -n lstree_internal python=3.7
+conda activate lstree_internal
 conda install -c pyviz holoviews bokeh panel param xarray datashader pytables
 conda install cudatoolkit=10.1 cudnn=7
 
