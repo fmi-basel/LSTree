@@ -1,7 +1,7 @@
 
 # LSTree
 
-LSTree is a digital organoid and lineage tree extraction framework for light sheet movies. 
+LSTree is a digital organoid and lineage tree extraction framework for light sheet movies. It provides pre-processing, analysis and visualization tools which generate multiple features from the 3D recorded data. Ultimately allowing the visualization of these freatures onto both lineage trees and 3D segmentation meshes in a combined way.
 
 ## Installation
 It is recommended to create a new python environment and install visualization libraries and cuda (GPU support) with conda:
@@ -15,6 +15,11 @@ conda install cudatoolkit=10.1 cudnn=7
 git clone https://github.com/fmi-basel/LSTree.git
 pip install LSTree/
 ```
+---
+**NOTE**
+The workflow has been developed and tested using linux operating systems.
+
+---
 
 ## Usage
 The entire analysis pipeline is implemented as a Luigi workflow [https://github.com/spotify/luigi] and majors steps can be run with the commands detailed below. Jupyter notebooks for interactive visualization of the result and drawing training labels are also provided.
