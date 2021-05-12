@@ -1,7 +1,7 @@
 
 # LSTree
 
-LSTree is a digital organoid and lineage tree extraction framework for light sheet movies. It provides pre-processing, analysis and visualization tools which generate multiple features from the 3D recorded data. Ultimately allowing the visualization of these freatures onto both lineage trees and 3D segmentation meshes in a combined way.
+LSTree is a digital organoid and lineage tree extraction framework for light sheet movies. It provides pre-processing, analysis and visualization tools which generate multiple features from the 3D recorded data. Ultimately, the extracted features can be visualized onto both lineage trees and 3D segmentation meshes in a combined way.
 
 ## Installation
 It is recommended to create a new python environment and install visualization libraries and cuda (GPU support) with conda:
@@ -17,7 +17,7 @@ pip install LSTree/
 ```
 ---
 **NOTE**
-The workflow has been developed and tested using linux operating systems.
+The workflow has been developed and tested using linux.
 
 ---
 
@@ -51,7 +51,7 @@ This workflow was tested on linux machines and is implemented using multiprocess
 The size of the deep learning models might need to be adjusted based on the available VRAM during training.
 
 ### Folder structure
-The data are expected to be organized with 2-level sub-folders for movie and channels respectively:
+A certain data structure is expected so tat the workflow can run smoothly: it should ideally be organized with 2-level sub-folders for movie and channels respectively:
 
 ```bash
 .
@@ -84,7 +84,7 @@ The data are expected to be organized with 2-level sub-folders for movie and cha
         └── FILENAME-Tnnnn.tif
  ```
 
-Generated outputs will appear as new sub-folders (Channel0-Deconv, Channel1-Deconv, nuclei_segmentation, cell_segmentation, etc.). Each movie folder should include a `mamut.xml` linage tree (see Lineage tree section below) and an `experiment.json` file containing information about acquisition settings:
+Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1-Deconv, nuclei_segmentation, cell_segmentation, etc.). Each movie folder should include a MaMuT (`mamut.xml`) linage tree (see Lineage tree section below) and an `experiment.json` file containing information about acquisition settings:
 
 ```
 {
@@ -105,7 +105,7 @@ Generated outputs will appear as new sub-folders (Channel0-Deconv, Channel1-Deco
 
 
 ### Configuration
-General parameters for each tasks are configured through a global configuration file [config.cfg](config.cfg). For instance deconvolution parameters common to all images can be controlled by:
+General parameters for each tasks are configured through a global configuration file [config.cfg](config.cfg). For example, deconvolution parameters common to all images can be controlled by:
 
 ```
 [DeconvolutionTask]
@@ -115,13 +115,17 @@ niter=128
 max_patch_size=(9999,9999,9999)
 ```
 
-### Cropping lightsheet movies
+In the configuration file changes in file/folder naming convention, etc, can also be done to adapt to already existing datasets, as long as all datasets follow the same structure.
+
+## Processing steps
+
+### 1. Cropping lightsheet movies
 Organoids' bounding boxes are first determined on a reference channel and independently for each frame using x,y and z maximum intensity projections (MIPs). Since multiple organoids might appear in the field of view (especially at early time-points), the largest object (or a manually selected object) on the last frame is tracked backward in time by finding its closest match in the previous frame until the first frame is reached. The minimum crop size required for the entire movie is then computed along each axis. At this point crops are reviewed with the included tool: [crop_movie.ipynb](notebooks/crop_movie.ipynb) and manual corrections can be made, for instance to account for stage movements during medium change. Finally all time-points and channels are cropped by centering the global bounding box on the tracked organoid.
 
 <img src="docs/cropping_tool.png" width="800"/><br>
 
-### Deconvolution
-Raw images are first denoised with a model trained with the Noise2Void scheme on a few images randomly selected from each movies/channels. The minimum intensity projection along z is used to estimate the background image under the assumption that for each pixel the background is visible on at least one z-slice. Denoised and background-corrected images are then deconvolved with a measured PSF using Richardson-Lucy algorithm running on the GPU. This step, including training the denoising model if needed, can be run manually with:
+### 2. Denoising and deconvolution
+Raw images are first denoised with a model trained with the [Noise2Void](https://github.com/juglab/n2v) scheme on a few images randomly selected from each movies/channels. The minimum intensity projection along z is used to estimate the background image under the assumption that for each pixel the background is visible on at least one z-slice. Denoised and background-corrected images are then deconvolved with a measured PSF using Richardson-Lucy algorithm running on the GPU. This step, including training the denoising model if needed, can be run manually with:
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiDeconvolutionTask
