@@ -18,32 +18,10 @@ conda install cudatoolkit=10.1 cudnn=7
 git clone https://github.com/fmi-basel/LSTree.git
 pip install LSTree/
 ```
----
-**NOTE**
-The workflow has been developed and tested using linux.
 
----
 
 ## Usage
 The entire analysis pipeline is implemented as a Luigi workflow [https://github.com/spotify/luigi] and majors steps can be run with the commands detailed below. Jupyter notebooks for interactive visualization of the result and drawing training labels are also provided.
-
-### Quickstart
-Acquired movie should first be cropped (see below) to reduce memory requirements and processing time. Then, provided that initial nuclei and lumen annotations, as well as lineage tree (generated/curated with Mastodon) are available, the entire pipeline can be triggered with:
-
-```bash
-LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
-```
-
-
-By default this command will run on the test dataset provided (003-20170313-P4-25X-Enterocyst) using all models trained with intestinal organoid images. The configuration file must be first adapted to the right input paths before using it on new user data.
-
-
----
-**NOTE**
-If there are samples for which the output files already exist, then these are skipped. To rerun the workflow all necessary intermediate and final outputs should be deleted. That also include training deep learning models, i.e. if a trained model exist, it is used without retraining.
-
----
-
 
 ### Minimum requirements
 This workflow was tested on linux machines and is implemented using multiprocessing. It will therefore run faster with more CPUs/GPUs available and requires at least:
@@ -120,6 +98,29 @@ max_patch_size=(9999,9999,9999)
 
 In the configuration file changes in file/folder naming convention, etc, can also be done to adapt to already existing datasets, as long as all datasets follow the same structure.
 
+### Quickstart
+Acquired movie should first be cropped (see below) to reduce memory requirements and processing time. Then, provided that initial nuclei and lumen annotations, as well as lineage tree (generated/curated with Mastodon) are available, the entire pipeline can be triggered with:
+
+```bash
+LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
+```
+
+
+By default this command will run on the test dataset provided (003-20170313-P4-25X-Enterocyst) using all models trained with intestinal organoid images. The configuration file must be first adapted to the right input paths before using it on new user data.
+
+
+---
+**NOTE**
+
+If there are samples for which the output files already exist, then these are skipped. To rerun the workflow all necessary intermediate and final outputs should be deleted. That also include training deep learning models, i.e. if a trained model exist, it is used without retraining.
+
+---
+
+
+
+
+
+
 ## Processing steps
 
 ### 1. Cropping lightsheet movies
@@ -134,7 +135,7 @@ Raw images are first denoised with a model trained with the [Noise2Void](https:/
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiDeconvolutionTask
 ```
 
-### Lineage tree
+### 3. Lineage tree
 Initially nuclei have to be tracked manually using [Mastodon](https://github.com/mastodon-sc/mastodon) Fiji plugin. Subsequently a deep learning model can be (re)trained to predict trees that require fewer manual corrections.
 
 ```bash
@@ -145,7 +146,7 @@ The tree prediction outputs include a `.xml` file that can be opened with Mastod
 
 <img src="docs/tree_pred.png" width="700"/><br>
 
-### Nuclei segmentation
+### 4. Nuclei segmentation
 Nuclei are segmented in 3D following previously reported method: [RDCNet: Instance segmentation with a minimalist recurrent residual network](https://github.com/fmi-basel/RDCNet). A deep learning model model is trained with a mix of complete and partial annotations. Partial labels are obtained by placing a spheres at the position of each tracked nuclei. A small subset of the frames are fully annotated by manually expanding the labels to the full nuclei. Labels can be edited with the provided [notebook](notebooks/3D_annotator.ipynb). Model architecture and training parameters can be controlled as illustrated in the example configuration file. In particular, initial weights can be supplied with the `resume_weights` option to refine an existing model. To train a model run:
 
 ```bash
@@ -158,7 +159,7 @@ At the beginning of the training, a pdf `training_samples.pdf` is exported in th
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiNucleiSegmentationTask
 ```
 
-### Cell and lumen segmentation
+### 5. Cell and lumen segmentation
 Cell and lumen segmentation also expand on the [RDCNet](https://github.com/fmi-basel/RDCNet) method. The semantic branch predicts 3 classes, background, lumen, epithelium and is supervised by manual annotations of a few frames per datasets. No manual annotations of individual cells is required. Instead the previously segmented nuclei are used as partial annotations under the assumption that they are randomly distributed within the cell compartment. Labels of nuclei belonging to multi-nucleated cells are merged based on the tracking information. Since only the membrane channel is provided as input, the network is forced to learn to segment cells. In practice nuclei are not completely randomly distributed (e.g. corners, tapered elongated cells). We therefore also add a regularization term that encourages voxels in unsupervised regions to vote for one of the instances (without enforcing which one) which yield reasonable cell segmentation in most cases. To train a model run:
 
 ```bash
@@ -170,7 +171,7 @@ Lumen segmentation and, if lineage tree exists, cell segmentation can be generat
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiCellSegmentationTask
 ```
 
-### Features extraction
+### 6. Features extraction
 Organoid-level features (volume, lumen volume, etc.) and cell-level features (cell/nuclei volume, aspect ratio, distance to lumen, etc.) can be extracted with:
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiAggregateFeaturesTask
@@ -194,18 +195,24 @@ raw_channel_subdirs=["Channel01", "Channel02"]
 extractor_type=generic
 ```
 
-### Generating training labels
+---
+**NOTE - Generating training labels**
+
+
 **3D annotator**<br>
 <img src="docs/3D_annotator.png" width="800"/><br>
 
 The segmentation pipeline requires manual annotations of nuclei and lumen/epithelium. The provided [3D_annotator.ipynb](notebooks/3D_annotator.ipynb) can be used to generate 3D segmentation labels. Once an initial segmentation output is generated, it becomes much faster to handpick bad samples and correct them. The [segmentation_viewer.ipynb](notebooks/segmentation_viewer.ipynb) notebook allows quickly inspecting the current segmentation and copying files to be corrected in a separate folder in one click.
 
 
-
 **Segmentation viewer**<br>
 <img src="docs/segmentation_viewer.png" width="500"/><br>
 
-### Visualization
+---
+
+
+
+### 7. Visualization
 The included web-based viewer allows visualizing a lineage tree with a linked view of the 3D cell/nuclei segmentation at a given timepoint.  
 
 Extracted features such as the nuclei volume can be viewed as color:  
