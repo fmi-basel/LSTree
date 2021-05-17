@@ -1,5 +1,5 @@
 
-# Introduction
+# Introduction - LSTree
 
 This repository hosts the version of the code used for the [preprint](https://www.biorxiv.org/content/10.1101/2021.05.12.443427v1) *Multiscale light-sheet organoid imaging framework*.
 
