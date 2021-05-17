@@ -243,3 +243,8 @@ panel serve --static-dirs static_data="static_data" --port PORT --allow-websocke
 - Processing steps are batched per movie/channel to amortize tensorflow model initialization.
 - Due to current tensorflow limitations, tensorflow should not be imported (directly or indirectly) in the main process but in the `run()` function of each Luigi task (i.e. in sub-processes spawned by Luigi)
 - Negative labels in training annotations are considered "not labeled" and do not contribute to the training loss (partial annotations)
+
+
+
+## Funding support
+This work was supported by EMBO (ALTF 571-2018 to G.M.), SNSF (POOP3_157531 to P.L.). This work received funding from the ERC under the European Union’s Horizon 2020 research and innovation programme (grant agreement no. 758617).
