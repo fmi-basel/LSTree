@@ -6,7 +6,7 @@ This repository hosts the version of the code used for the [preprint](https://ww
 **LSTree** is a digital organoid and lineage tree extraction framework for light sheet movies. It provides pre-processing, analysis and visualization tools which generate multiple features from the 3D recorded data. Ultimately, the extracted features can be visualized onto both lineage trees and 3D segmentation meshes in a combined way.
 
 
-## Installation
+# Installation
 It is recommended to create a new python environment and install visualization libraries and cuda (GPU support) with conda:
 
 ```bash
@@ -20,10 +20,10 @@ pip install LSTree/
 ```
 
 
-## Usage
+# Usage
 The entire analysis pipeline is implemented as a Luigi workflow [https://github.com/spotify/luigi] and majors steps can be run with the commands detailed below. Jupyter notebooks for interactive visualization of the result and drawing training labels are also provided.
 
-### Minimum requirements
+## Minimum requirements
 This workflow was tested on linux machines and is implemented using multiprocessing. It will therefore run faster with more CPUs/GPUs available and requires at least:
 
 - 16 GB of RAM
@@ -31,7 +31,7 @@ This workflow was tested on linux machines and is implemented using multiprocess
 
 The size of the deep learning models might need to be adjusted based on the available VRAM during training.
 
-### Folder structure
+## Folder structure
 A certain data structure is expected so tat the workflow can run smoothly: it should ideally be organized with 2-level sub-folders for movie and channels respectively:
 
 ```bash
@@ -85,7 +85,7 @@ Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1
 ```  
 
 
-### Configuration
+## Configuration
 General parameters for each tasks are configured through a global configuration file [config.cfg](config.cfg). For example, deconvolution parameters common to all images can be controlled by:
 
 ```
@@ -98,7 +98,7 @@ max_patch_size=(9999,9999,9999)
 
 In the configuration file changes in file/folder naming convention, etc, can also be done to adapt to already existing datasets, as long as all datasets follow the same structure.
 
-### Quickstart
+## Quickstart
 Acquired movie should first be cropped (see below) to reduce memory requirements and processing time. Then, provided that initial nuclei and lumen annotations, as well as lineage tree (generated/curated with Mastodon) are available, the entire pipeline can be triggered with:
 
 ```bash
@@ -121,21 +121,21 @@ If there are samples for which the output files already exist, then these are sk
 
 
 
-## Processing steps
+# Processing steps
 
-### 1. Cropping lightsheet movies
+## 1. Cropping lights-heet movies
 Organoids' bounding boxes are first determined on a reference channel and independently for each frame using x,y and z maximum intensity projections (MIPs). Since multiple organoids might appear in the field of view (especially at early time-points), the largest object (or a manually selected object) on the last frame is tracked backward in time by finding its closest match in the previous frame until the first frame is reached. The minimum crop size required for the entire movie is then computed along each axis. At this point crops are reviewed with the included tool: [crop_movie.ipynb](notebooks/crop_movie.ipynb) and manual corrections can be made, for instance to account for stage movements during medium change. Finally all time-points and channels are cropped by centering the global bounding box on the tracked organoid.
 
 <img src="docs/cropping_tool.png" width="800"/><br>
 
-### 2. Denoising and deconvolution
+## 2. Denoising and deconvolution
 Raw images are first denoised with a model trained with the [Noise2Void](https://github.com/juglab/n2v) scheme on a few images randomly selected from each movies/channels. The minimum intensity projection along z is used to estimate the background image under the assumption that for each pixel the background is visible on at least one z-slice. Denoised and background-corrected images are then deconvolved with a measured PSF using Richardson-Lucy algorithm running on the GPU. This step, including training the denoising model if needed, can be run manually with:
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiDeconvolutionTask
 ```
 
-### 3. Lineage tree
+## 3. Lineage tree
 Initially nuclei have to be tracked manually using [Mastodon](https://github.com/mastodon-sc/mastodon) Fiji plugin. Subsequently a deep learning model can be (re)trained to predict trees that require fewer manual corrections.
 
 ```bash
@@ -146,7 +146,7 @@ The tree prediction outputs include a `.xml` file that can be opened with Mastod
 
 <img src="docs/tree_pred.png" width="700"/><br>
 
-### 4. Nuclei segmentation
+## 4. Nuclei segmentation
 Nuclei are segmented in 3D following previously reported method: [RDCNet: Instance segmentation with a minimalist recurrent residual network](https://github.com/fmi-basel/RDCNet). A deep learning model model is trained with a mix of complete and partial annotations. Partial labels are obtained by placing a spheres at the position of each tracked nuclei. A small subset of the frames are fully annotated by manually expanding the labels to the full nuclei. Labels can be edited with the provided [notebook](notebooks/3D_annotator.ipynb). Model architecture and training parameters can be controlled as illustrated in the example configuration file. In particular, initial weights can be supplied with the `resume_weights` option to refine an existing model. To train a model run:
 
 ```bash
@@ -159,7 +159,7 @@ At the beginning of the training, a pdf `training_samples.pdf` is exported in th
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiNucleiSegmentationTask
 ```
 
-### 5. Cell and lumen segmentation
+## 5. Cell and lumen segmentation
 Cell and lumen segmentation also expand on the [RDCNet](https://github.com/fmi-basel/RDCNet) method. The semantic branch predicts 3 classes, background, lumen, epithelium and is supervised by manual annotations of a few frames per datasets. No manual annotations of individual cells is required. Instead the previously segmented nuclei are used as partial annotations under the assumption that they are randomly distributed within the cell compartment. Labels of nuclei belonging to multi-nucleated cells are merged based on the tracking information. Since only the membrane channel is provided as input, the network is forced to learn to segment cells. In practice nuclei are not completely randomly distributed (e.g. corners, tapered elongated cells). We therefore also add a regularization term that encourages voxels in unsupervised regions to vote for one of the instances (without enforcing which one) which yield reasonable cell segmentation in most cases. To train a model run:
 
 ```bash
@@ -171,7 +171,7 @@ Lumen segmentation and, if lineage tree exists, cell segmentation can be generat
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiCellSegmentationTask
 ```
 
-### 6. Features extraction
+## 6. Features extraction
 Organoid-level features (volume, lumen volume, etc.) and cell-level features (cell/nuclei volume, aspect ratio, distance to lumen, etc.) can be extracted with:
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiAggregateFeaturesTask
@@ -212,7 +212,7 @@ The segmentation pipeline requires manual annotations of nuclei and lumen/epithe
 
 
 
-### 7. Visualization
+## 7. Visualization
 The included web-based viewer allows visualizing a lineage tree with a linked view of the 3D cell/nuclei segmentation at a given timepoint.  
 
 Extracted features such as the nuclei volume can be viewed as color:  
@@ -253,5 +253,5 @@ panel serve --static-dirs static_data="static_data" --port PORT --allow-websocke
 
 
 
-## Funding support
+# Funding support
 This work was supported by EMBO (ALTF 571-2018 to G.M.), SNSF (POOP3_157531 to P.L.). This work received funding from the ERC under the European Union’s Horizon 2020 research and innovation programme (grant agreement no. 758617).
