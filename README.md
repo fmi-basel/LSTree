@@ -29,10 +29,9 @@ conda create -n lstree python=3.7
 conda activate lstree
 ```
 
-Next we install all needed dependencies before cloning the repository:
+> :warning: **GPU support via Cuda**: we have tested LSTree using specific version for NVIDIA cudatoolkit (version 10.7) and NVIDIA CUDA® Deep Neural Network library (cuDNN) (version 7) library that work with Tensorflow 2.3, which is accordance to the guidelines from Tensorflow, as specified their [website](https://www.tensorflow.org/install/source#gpu). Therefore it is recommended that you have the right NVIDA driver - according to [wandb.ai](https://wandb.ai/wandb/common-ml-errors/reports/How-to-Correctly-Install-TensorFlow-in-a-GPU-Enabled-Laptop--VmlldzozMDYxMDQ) it should be 418.x or higher. For more information please visit the [tensorflow.org](https://www.tensorflow.org/) website. Considering the NVIDA driver to be already installed, please install the cuda related libraries via:
 
 ```bash
-conda install -c pyviz holoviews bokeh panel param xarray datashader pytables
 conda install cudatoolkit=10.1 cudnn=7
 ```
 
