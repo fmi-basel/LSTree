@@ -11,7 +11,6 @@ setup(name='LSTree',
       author=', '.join(contrib),
       packages=find_packages(exclude=['tests']),
       install_requires=[
-          'pyviz',
           'holoviews',
           'bokeh',
           'panel',
