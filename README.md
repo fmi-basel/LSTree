@@ -3,7 +3,9 @@
 
 This repository hosts the version of the code used for the [preprint](https://www.biorxiv.org/content/10.1101/2021.05.12.443427v1) *Multiscale light-sheet organoid imaging framework*.
 
-**LSTree** is a digital organoid and lineage tree extraction framework for light sheet movies. It provides pre-processing, analysis and visualization tools which generate multiple features from the 3D recorded data. Ultimately, the extracted features can be visualized onto both lineage trees and 3D segmentation meshes in a combined way.
+**LSTree** is a digital organoid and lineage tree extraction framework for light sheet movies. It provides pre-processing, analysis and visualization tools which generate multiple features from the 3D recorded data. Ultimately, the extracted features can be visualized onto both lineage trees and 3D segmentation meshes in a combined way via a web-based viewer.
+
+Below you will find instructions on how to install the environment to run LSTree as well as how to run it on the two example datasets.
 
 
 # Installation
@@ -12,9 +14,18 @@ It is recommended to create a new python environment and install visualization l
 ```bash
 conda create -n lstree python=3.7
 conda activate lstree
+```
+
+Next we install all needed dependencies before cloning the repository:
+
+```bash
 conda install -c pyviz holoviews bokeh panel param xarray datashader pytables
 conda install cudatoolkit=10.1 cudnn=7
+```
 
+Finally we clone this repository and install it onto the new environment:
+
+```bash
 git clone https://github.com/fmi-basel/LSTree.git
 pip install LSTree/
 ```
