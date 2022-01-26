@@ -8,7 +8,20 @@ This repository hosts the version of the code used for the [preprint](https://ww
 Below you will find instructions on how to install the environment to run LSTree as well as how to run it on the two example datasets.
 
 
+
+
 # Installation
+
+## Minimum requirements
+This workflow was tested on linux machines and is implemented using multiprocessing. It will therefore run faster with more CPUs/GPUs available and requires at least:
+
+- 16 GB of RAM
+- TensorFlow compatible GPU with >8 GB of VRAM
+
+The size of the deep learning models might need to be adjusted based on the available VRAM during training.
+
+## Installation steps
+
 It is recommended to create a new python environment and install visualization libraries and cuda (GPU support) with conda:
 
 ```bash
@@ -33,14 +46,6 @@ pip install LSTree/
 
 # Usage
 The entire analysis pipeline is implemented as a Luigi workflow [https://github.com/spotify/luigi] and majors steps can be run with the commands detailed below. Jupyter notebooks for interactive visualization of the result and drawing training labels are also provided.
-
-## Minimum requirements
-This workflow was tested on linux machines and is implemented using multiprocessing. It will therefore run faster with more CPUs/GPUs available and requires at least:
-
-- 16 GB of RAM
-- TensorFlow compatible GPU with >8 GB of VRAM
-
-The size of the deep learning models might need to be adjusted based on the available VRAM during training.
 
 ## Folder structure
 A certain data structure is expected so tat the workflow can run smoothly: it should ideally be organized with 2-level sub-folders for movie and channels respectively:
