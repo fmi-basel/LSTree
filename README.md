@@ -1,7 +1,7 @@
 
 # Introduction - LSTree
 
-This repository hosts the version of the code used for the [preprint](https://www.biorxiv.org/content/10.1101/2021.05.12.443427v1) *Multiscale light-sheet organoid imaging framework*.
+This repository hosts the version of the code used for the [preprint](https://www.biorxiv.org/content/10.1101/2021.05.12.443427v1) *Multiscale light-sheet organoid imaging framework* (de Medeiros, Ortiz et al 2021).
 
 **LSTree** is a digital organoid and lineage tree extraction framework for light sheet movies. It provides pre-processing, analysis and visualization tools which generate multiple features from the 3D recorded data. Ultimately, the extracted features can be visualized onto both lineage trees and 3D segmentation meshes in a combined way via a web-based viewer.
 
@@ -50,10 +50,10 @@ pip install LSTree/
 
 
 # Usage
-The entire analysis pipeline is implemented as a Luigi workflow [https://github.com/spotify/luigi] and majors steps can be run with the commands detailed below. Jupyter notebooks for interactive visualization of the result and drawing training labels are also provided.
+The entire analysis pipeline is implemented as a Luigi workflow [https://github.com/spotify/luigi] and majors steps can be run with the commands detailed below and on the following sections. Jupyter notebooks for interactive [visualization of the results](/webview/webview.ipynb) and [drawing 3D labels](/notebooks/3D_annotator.ipynb) are also provided.
 
 ## Folder structure
-A certain data structure is expected so tat the workflow can run smoothly: it should ideally be organized with 2-level sub-folders for movie and channels respectively:
+A certain data structure is expected so that the workflow can run smoothly: it should ideally be organized with 2-level sub-folders for movie and channels respectively:
 
 ```bash
 .
@@ -86,7 +86,11 @@ A certain data structure is expected so tat the workflow can run smoothly: it sh
         └── FILENAME-Tnnnn.tif
  ```
 
-Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1-Deconv, nuclei_segmentation, cell_segmentation, etc.). Each movie folder should include a MaMuT (`mamut.xml`) linage tree (see Lineage tree section below) and an `experiment.json` file containing information about acquisition settings:
+Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1-Deconv, nuclei_segmentation, cell_segmentation, etc.). Changes in the details concerning file names can still be cahnged in the [configuration file](config.cfg).
+
+## Expected initial files
+
+Ideally, to be able to extract all features, each movie folder should include a MaMuT (`mamut.xml`) lineage tree (see Lineage tree section below) along with an `experiment.json` file containing information about acquisition settings which are used e.g. for rescaling, deconvolution and for showing the data with the right temporal spacing, among others:
 
 ```
 {
@@ -106,7 +110,7 @@ Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1
 ```  
 
 
-## Configuration
+## Configuration file
 General parameters for each tasks are configured through a global configuration file [config.cfg](config.cfg). For example, deconvolution parameters common to all images can be controlled by:
 
 ```
@@ -234,35 +238,9 @@ The segmentation pipeline requires manual annotations of nuclei and lumen/epithe
 
 
 ## 7. Visualization
-The included web-based viewer allows visualizing a lineage tree with a linked view of the 3D cell/nuclei segmentation at a given timepoint.  
+The included web-based viewer allows visualizing a lineage tree with a linked view of the 3D cell/nuclei segmentation at a given timepoint. More information on how to use it, along with example notebook can be found [here](webview/README.md).
 
-Extracted features such as the nuclei volume can be viewed as color:  
-<img src="docs/viewer_volume.png" width="1000"/><br>
 
-Orthogonal views of the original image can be displayed to double check the segmentation:  
-<img src="docs/viewer_stack.png" width="1000"/><br>
-
-It is also possible to highlight certain areas of the tree by manual selection:  
-<img src="docs/viewer_selection.png" width="1000"/><br>
-
-To be responsive, the viewer rely on smoothed 3D meshes pre-generated from the segmentation stacks with:
-```bash
-LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
-```
-
-The viewer is then accessible either as a jupyter notebook [notebook](webview/webview.ipynb) or directly served to the browser by running:
-
-```bash
-cd webview
-panel serve --static-dirs static_data="static_data" --show webview/webview.ipynb --args --basedir PATH_TO_PROCESSED_DATA
-```
-
-or on a remote machine:
-
-```bash
-cd webview
-panel serve --static-dirs static_data="static_data" --port PORT --allow-websocket-origin WORKSTATION:PORT webview.ipynb  --args --basedir PATH_TO_PROCESSED_DATA
-```
 
 
 
