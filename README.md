@@ -35,7 +35,10 @@ conda install -c pyviz pytables
 ```
 
 
-> :warning: **Cuda GPU support and Tensorflow**: we have tested LSTree using specific version for NVIDIA cudatoolkit (version 10.7) and NVIDIA CUDA® Deep Neural Network library (cuDNN) (version 7) libraries that work with Tensorflow 2.3. This is in accordance to the guidelines from Tensorflow, as specified their [website](https://www.tensorflow.org/install/source#gpu). Therefore it is recommended that you have the right NVIDA driver - according to [wandb.ai](https://wandb.ai/wandb/common-ml-errors/reports/How-to-Correctly-Install-TensorFlow-in-a-GPU-Enabled-Laptop--VmlldzozMDYxMDQ) it should be 418.x or higher. For more information please visit the [tensorflow.org](https://www.tensorflow.org/) website. Considering the NVIDA driver to be already installed, please install the cuda related libraries via:
+> :warning: **Cuda GPU support and Tensorflow**: we have tested LSTree using specific version for NVIDIA cudatoolkit (version 10.7) and NVIDIA CUDA® Deep Neural Network library (cuDNN) (version 7) libraries that work with Tensorflow 2.3. This is in accordance to the guidelines from Tensorflow, as specified their [website](https://www.tensorflow.org/install/source#gpu). Therefore it is recommended that you have the right NVIDA driver - according to [wandb.ai](https://wandb.ai/wandb/common-ml-errors/reports/How-to-Correctly-Install-TensorFlow-in-a-GPU-Enabled-Laptop--VmlldzozMDYxMDQ) it should be 418.x or higher. For more information please visit the [tensorflow.org](https://www.tensorflow.org/) website. 
+
+
+Considering the NVIDIA driver to be already installed, please install the cuda related libraries via:
 
 ```bash
 conda install cudatoolkit=10.1 cudnn=7
@@ -122,6 +125,8 @@ max_patch_size=(9999,9999,9999)
 ```
 
 In the configuration file changes in file/folder naming convention, etc, can also be done to adapt to already existing datasets, as long as all datasets follow the same structure.
+
+More information is discussed within the [example guide](example/README.md).
 
 ## Quickstart
 Acquired movie should first be cropped (see below) to reduce memory requirements and processing time. Then, provided that initial nuclei and lumen annotations, as well as lineage tree (generated/curated with Mastodon) are available, the entire pipeline can be triggered with:
