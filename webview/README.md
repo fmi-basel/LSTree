@@ -3,6 +3,8 @@
 
 The included web-based viewer allows visualizing a lineage tree with a linked view of the 3D cell/nuclei segmentation at a given timepoint.  
 
+<!-- ![webviewer](../docs/webviewer_presentation.mp4) -->
+
 Extracted features such as the nuclei volume can be viewed as color:  
 <img src="../docs/viewer_volume.png" width="1000"/><br>
 
