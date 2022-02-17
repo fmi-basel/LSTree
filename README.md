@@ -147,21 +147,7 @@ In the configuration file changes in file/folder naming convention, etc, can als
 
 More information is discussed within the [example guide](example/README.md).
 
-## Quickstart
-Acquired movie should first be cropped (see below) to reduce memory requirements and processing time. Then, provided that initial nuclei and lumen annotations, as well as lineage tree (generated/curated with Mastodon) are available, the entire pipeline can be triggered with:
 
-```bash
-LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
-```
-
-
-By default this command will run on the test dataset provided (003-20170313-P4-25X-Enterocyst) using all models trained with intestinal organoid images. The configuration file must be first adapted to the right input paths before using it on new user data.
-
-
----
-**NOTE**
-
-If there are samples for which the output files already exist, then these are skipped. To rerun the workflow all necessary intermediate and final outputs should be deleted. That also include training deep learning models, i.e. if a trained model exist, it is used without retraining.
 
 ---
 
