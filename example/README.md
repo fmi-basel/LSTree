@@ -3,15 +3,23 @@
 To get acquainted with LSTree, we provide two test datasets that can be used for running the workflow. For simplicity they have already been pre-processed (only cropping, to reduce memory requirements and processing time) and the example lineage trees have been created and exported as MaMuT .xml files. Below we will describe what these steps entail, as well as providing more in-depth information on the main tasks behind the workflow.
 
 ## Quickstart
+
+### 1) Processing the example data
+
 As long as the data has been cropped and lineage tree created/curated and exported via MaMuT .xml ( which is the case for the example datasets ), the entire LSTree workflow can be activated via
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
 ```
 
-By default this command will run on the test dataset provided (002-Budding and 003-Enterocyst) using all models trained with intestinal organoid images. After processing is finished all the outputs can be visualized with the [webviewer](../webview/README.md).
+By default this command will run on the test dataset provided (002-Budding and 003-Enterocyst) using all models trained with intestinal organoid images. Therefore, the configuration file must be first adapted to the right input paths before using it on new user data.
 
-Therefore, the configuration file must be first adapted to the right input paths before using it on new user data.
+### 2) Visualization of the output
+
+After processing is finished all the outputs can be visualized with the [webviewer](../webview/webview.ipynb).
+The included web-based viewer allows visualizing a lineage tree with a linked view of the 3D cell/nuclei segmentation at a given timepoint. More information on how to use it, along with example notebook can be found [here](../webview/README.md).
+
+
 
 
 ---
@@ -42,7 +50,7 @@ LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiDeco
 ```
 
 ## 3. Lineage tree
-Initially nuclei have to be tracked manually using [Mastodon](https://github.com/mastodon-sc/mastodon) Fiji plugin. Subsequently a deep learning model can be (re)trained to predict trees that require fewer manual corrections.
+LSTree works directly directly with exported MaMuT `.xml`git files that contain trees made using [Mastodon](https://github.com/mastodon-sc/mastodon) Fiji plugin. Subsequently a deep learning model can be (re)trained to predict trees that require fewer manual corrections. Alternatively, one can also use the output from [Elephant](https://elephant-track.github.io/#/v0.3/) ( as MaMuT `.xml` ) to fine tune an existing model or just as final lineage tree output for further processing (segmentation and feature extraction steps). 
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiBuildTreeTask
