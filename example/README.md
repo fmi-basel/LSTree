@@ -1,20 +1,24 @@
 # Introduction - LSTree example usage
 
-To get acquainted with LSTree, we provide two test datasets that can be used for running the workflow. For simplicity they have already been pre-processed (only cropping, to reduce memory requirements and processing time) and the example lineage trees have been created and exported as MaMuT .xml files. Below we will describe what these steps entail, as well as giving a step-by-step guide on the main tasks behind the workflow.
+To get acquainted with LSTree, we provide two test datasets that can be used for running the workflow. For simplicity they have already been pre-processed (only cropping, to reduce memory requirements and processing time) and the example lineage trees have been created and exported as MaMuT .xml files. Below we will describe what these steps entail, as well as providing more in-depth information on the main tasks behind the workflow.
 
 ## Quickstart
-As long as the data has been cropped and lineage tree created/curated and exported via MaMuT .xml, the entire LSTree workflow can be activated via
+As long as the data has been cropped and lineage tree created/curated and exported via MaMuT .xml ( which is the case for the example datasets ), the entire LSTree workflow can be activated via
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
 ```
 
-By default this command will run on the test dataset provided (002-Budding and 003-Enterocyst) using all models trained with intestinal organoid images. The configuration file must be first adapted to the right input paths before using it on new user data.
+By default this command will run on the test dataset provided (002-Budding and 003-Enterocyst) using all models trained with intestinal organoid images. After processing is finished all the outputs can be visualized with the [webviewer](../webview/README.md).
+
+Therefore, the configuration file must be first adapted to the right input paths before using it on new user data.
 
 
 ---
 
-> :warning: **Important: How to rerun tasks**: If there are samples for which the output files already exist, then these are skipped. To rerun the workflow all necessary intermediate and final outputs should be deleted. That also include training deep learning models, i.e. if a trained model exist, it is used without retraining.
+> :warning: **Important: How to rerun tasks**: If there are samples for which the output files already exist, then these are skipped. To rerun a specific task* all necessary intermediate and final outputs should be deleted. That also include training deep learning models, i.e. if a trained model exist, it is used without retraining. ( *Lineage tree prediction is currently the only task that can resume in case it is suddenly stopped. ) 
+
+
 
 ---
 
@@ -31,7 +35,7 @@ Organoids' bounding boxes are first determined on a reference channel and indepe
 <img src="../docs/cropping_tool.png" width="800"/><br>
 
 ## 2. Denoising and deconvolution
-Raw images are first denoised with a model trained with the [Noise2Void](https://github.com/juglab/n2v) scheme on a few images randomly selected from each movies/channels. The minimum intensity projection along z is used to estimate the background image under the assumption that for each pixel the background is visible on at least one z-slice. Denoised and background-corrected images are then deconvolved with a measured PSF using Richardson-Lucy algorithm running on the GPU. This step, including training the denoising model if needed, can be run manually with:
+Raw images are first denoised with a model trained with the [Noise2Void](https://github.com/juglab/n2v) scheme on a few images randomly selected from each movies/channels. The minimum intensity projection along z is used to estimate the background image under the assumption that for each pixel the background is visible on at least one z-slice. Denoised and background-corrected images are then deconvolved with a measured PSF using Richardson-Lucy algorithm running on the GPU using [flowdec](https://github.com/hammerlab/flowdec). This step, including training the denoising model if needed, can be run manually with:
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiDeconvolutionTask
@@ -61,8 +65,23 @@ At the beginning of the training, a pdf `training_samples.pdf` is exported in th
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiNucleiSegmentationTask
 ```
 
+**Important!**
+
+- If no nuclei segmentation exist yet, use the partial annotations generated from the tracked seed as starting point (e.g. nuclei_weak_annot)
+    To do this, 
+1) Run 
+    ```bash
+    LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree NucleiSegmentationTrainingTask
+    ```
+   to trigger the generation of the partial labels.
+
+
+2)  After a first prediction has been generated, use the your viewer of choice ( [napari](napari.org), [ImageJ](imagej.net), etc ) to find files for fine tuning of the model. Alternative you can also use the [segmentation viewer](../notebooks/segmentation_viewer.ipynb) to pick and automatically copy files for correction in a separate folder.
+
 ## 5. Cell and lumen segmentation
-Cell and lumen segmentation also expand on the [RDCNet](https://github.com/fmi-basel/RDCNet) method. The semantic branch predicts 3 classes, background, lumen, epithelium and is supervised by manual annotations of a few frames per datasets. No manual annotations of individual cells is required. Instead the previously segmented nuclei are used as partial annotations under the assumption that they are randomly distributed within the cell compartment. Labels of nuclei belonging to multi-nucleated cells are merged based on the tracking information. Since only the membrane channel is provided as input, the network is forced to learn to segment cells. In practice nuclei are not completely randomly distributed (e.g. corners, tapered elongated cells). We therefore also add a regularization term that encourages voxels in unsupervised regions to vote for one of the instances (without enforcing which one) which yield reasonable cell segmentation in most cases. To train a model run:
+Cell and lumen segmentation also expand on the [RDCNet](https://github.com/fmi-basel/RDCNet) method. The semantic branch predicts 3 classes, background, lumen, epithelium and is supervised by manual annotations of a few frames per datasets. *No manual annotations of individual cells is required.* Instead, the previously segmented nuclei are used as partial annotations under the assumption that they are randomly distributed within the cell compartment. Labels of nuclei belonging to multi-nucleated cells are merged based on the tracking information. Since only the membrane channel is provided as input, the network is forced to learn to segment cells. In practice nuclei are not completely randomly distributed (e.g. corners, tapered elongated cells). We therefore also add a regularization term that encourages voxels in unsupervised regions to vote for one of the instances (without enforcing which one) which yield reasonable cell segmentation in most cases. 
+
+To train a model ( considerirng the existence of nuclei segmentation and lumen annotations ) run:
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree CellSegmentationTrainingTask
@@ -74,7 +93,7 @@ LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiCell
 ```
 
 ## 6. Features extraction
-Organoid-level features (volume, lumen volume, etc.) and cell-level features (cell/nuclei volume, aspect ratio, distance to lumen, etc.) can be extracted with:
+Organoid-level features ( volume, lumen volume, etc ) and cell-level features ( cell/nuclei volume, aspect ratio, distance to lumen, etc ) can be extracted with:
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiAggregateFeaturesTask
 ```
@@ -102,12 +121,12 @@ extractor_type=generic
 
 
 **3D annotator**<br>
-<img src="docs/3D_annotator.png" width="800"/><br>
+<img src="../docs/3D_annotator.png" width="800"/><br>
 
 The segmentation pipeline requires manual annotations of nuclei and lumen/epithelium. The provided [3D_annotator.ipynb](notebooks/3D_annotator.ipynb) can be used to generate 3D segmentation labels. Once an initial segmentation output is generated, it becomes much faster to handpick bad samples and correct them. The [segmentation_viewer.ipynb](notebooks/segmentation_viewer.ipynb) notebook allows quickly inspecting the current segmentation and copying files to be corrected in a separate folder in one click.
 
 
 **Segmentation viewer**<br>
-<img src="docs/segmentation_viewer.png" width="500"/><br>
+<img src="../docs/segmentation_viewer.png" width="500"/><br>
 
 ---

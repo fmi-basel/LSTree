@@ -7,6 +7,26 @@ This repository hosts the version of the code used for the [preprint](https://ww
 
 Below you will find instructions on how to install the environment to run LSTree as well as how to run it on the two example datasets.
 
+# Main Sections
+
+## 0) Installation
+
+Main steps for installing LSTree can be found below in the next Section.
+
+## 1) [Example](/example/)
+
+Step-by-step guide of the main functions on two example datasets.
+
+## 2) [Utils](/notebooks/)
+A compendium of utilities we initially created to aid on 3D annotations and checking segmentation quality. Also includes the cropping notebook used as a pre-processing step.
+
+## 3) [Models](/models/)
+
+Gathers all of the models trained for segmentation and linega tree prediction used in the manuscript. All of the data used for training can be found here  -----zenodo link.
+
+## 4) [Webviewer](/webview/)
+
+A multiscale visualization tool that aims at bringing lineage trees and segmented data together in one viewer.
 
 
 
@@ -51,7 +71,6 @@ git clone https://github.com/fmi-basel/LSTree.git
 pip install LSTree/
 ```
 
-
 # Usage
 The entire analysis pipeline is implemented as a Luigi workflow [https://github.com/spotify/luigi] and majors steps can be run with the commands detailed below and on the following sections. Jupyter notebooks for interactive [visualization of the results](/webview/webview.ipynb) and [drawing 3D labels](/notebooks/3D_annotator.ipynb) are also provided.
 
@@ -93,7 +112,7 @@ Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1
 
 ## Expected initial files
 
-Ideally, to be able to extract all features, each movie folder should include a MaMuT (`mamut.xml`) lineage tree (see Lineage tree section below) along with an `experiment.json` file containing information about acquisition settings which are used e.g. for rescaling, deconvolution and for showing the data with the right temporal spacing, among others:
+Ideally, to be able to extract all features, each movie folder should include a MaMuT (`mamut.xml`) lineage tree (see Lineage tree section below) along with an [experiment.json](/example/data/002-Budding/experiment.json) file containing information about acquisition settings which are used e.g. for rescaling, deconvolution and for showing the data with the right temporal spacing, among others:
 
 ```
 {
