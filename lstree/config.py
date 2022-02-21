@@ -1,6 +1,6 @@
 import luigi
 
-SPACING = {25: (2, 0.26, 0.26), 37: (2, 0.173, 0.173)}
+SPACING = {25: (2, 0.26, 0.26), 37: (2, 0.173, 0.173)}  # check if this is explicitly used or if spacing comes solely from config.cfg and experiment.json files!
 
 # yapf: disable
 

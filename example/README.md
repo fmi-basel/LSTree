@@ -14,6 +14,7 @@ LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTas
 
 By default this command will run on the test dataset provided (002-Budding and 003-Enterocyst) using all models trained with intestinal organoid images. Therefore, the configuration file must be first adapted to the right input paths before using it on new user data.
 
+
 ### 2) Visualization of the output
 
 After processing is finished all the outputs can be visualized with the [webviewer](../webview/webview.ipynb).
@@ -37,7 +38,7 @@ The included web-based viewer allows visualizing a lineage tree with a linked vi
 
 # Processing steps
 
-## 1. Cropping lights-heet movies
+## 1. Cropping light-sheet movies
 Organoids' bounding boxes are first determined on a reference channel and independently for each frame using x,y and z maximum intensity projections (MIPs). Since multiple organoids might appear in the field of view (especially at early time-points), the largest object (or a manually selected object) on the last frame is tracked backward in time by finding its closest match in the previous frame until the first frame is reached. The minimum crop size required for the entire movie is then computed along each axis. At this point crops are reviewed with the included tool: [crop_movie.ipynb](notebooks/crop_movie.ipynb) and manual corrections can be made, for instance to account for stage movements during medium change. Finally all time-points and channels are cropped by centering the global bounding box on the tracked organoid.
 
 <img src="../docs/cropping_tool.png" width="800"/><br>
@@ -138,3 +139,10 @@ The segmentation pipeline requires manual annotations of nuclei and lumen/epithe
 <img src="../docs/segmentation_viewer.png" width="500"/><br>
 
 ---
+
+
+
+## 7. Configuration file parameters
+The configuration file specifies all necessary parameters for training, prediction and feature extraction as luigi bound tasks. Here is a list of the main parameters for each specified task.
+
+
