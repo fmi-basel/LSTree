@@ -11,7 +11,7 @@ Below you will find instructions on how to install the environment to run LSTree
 
 ## 0) Installation
 
-Main steps for installing LSTree can be found below in the next Section.
+Main steps for installing LSTree can be found below in the Installation section.
 
 ## 1) [Example](/example/)
 
@@ -38,6 +38,8 @@ This workflow was tested on linux machines and is implemented using multiprocess
 - 16 GB of RAM
 - TensorFlow compatible GPU with >8 GB of VRAM
 
+Currently the tasks have been tested with a16 core Intel Xeon W-2145, 64 GB 2666MHz DDR4 RAM equipped with a Nvidia Quadro RTX 6000 GPU with 24 GB VRAM and using Ubuntu 18.04.6 LTS. 
+
 The size of the deep learning models might need to be adjusted based on the available VRAM during training.
 
 ## Installation steps
@@ -55,7 +57,7 @@ conda install -c pyviz pytables
 ```
 
 
-> :warning: **Cuda GPU support and Tensorflow**: we have tested LSTree using specific version for NVIDIA cudatoolkit (version 10.7) and NVIDIA CUDA® Deep Neural Network library (cuDNN) (version 7) libraries that work with Tensorflow 2.3. This is in accordance to the guidelines from Tensorflow, as specified their [website](https://www.tensorflow.org/install/source#gpu). Therefore it is recommended that you have the right NVIDA driver - according to [wandb.ai](https://wandb.ai/wandb/common-ml-errors/reports/How-to-Correctly-Install-TensorFlow-in-a-GPU-Enabled-Laptop--VmlldzozMDYxMDQ) it should be 418.x or higher. For more information please visit the [tensorflow.org](https://www.tensorflow.org/) website. 
+> :warning: **Cuda GPU support and Tensorflow**: we have tested LSTree using specific version for NVIDIA cudatoolkit (version 10.1) and NVIDIA CUDA® Deep Neural Network library (cuDNN) (version 7) libraries that work with Tensorflow 2.3. This is in accordance to the guidelines from Tensorflow, as specified their [website](https://www.tensorflow.org/install/source#gpu). Therefore it is recommended that you have the right NVIDA driver - according to [wandb.ai](https://wandb.ai/wandb/common-ml-errors/reports/How-to-Correctly-Install-TensorFlow-in-a-GPU-Enabled-Laptop--VmlldzozMDYxMDQ) it should be 418.x or higher. For more information please visit the [tensorflow.org](https://www.tensorflow.org/) website. 
 
 
 Considering the NVIDIA driver to be already installed, please install the cuda related libraries via:
