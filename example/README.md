@@ -142,7 +142,4 @@ The segmentation pipeline requires manual annotations of nuclei and lumen/epithe
 
 
 
-## 7. Configuration file parameters
-The configuration file specifies all necessary parameters for training, prediction and feature extraction as luigi bound tasks. Here is a list of the main parameters for each specified task.
-
 

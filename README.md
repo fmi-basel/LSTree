@@ -22,7 +22,7 @@ A compendium of utilities we initially created to aid on 3D annotations and chec
 
 ## 3) [Models](/models/)
 
-Gathers all of the models trained for segmentation and linega tree prediction used in the manuscript. All of the data used for training can be found here  -----zenodo link.
+Gathers all of the models trained for segmentation and linega tree prediction used in the manuscript. 
 
 ## 4) [Webviewer](/webview/)
 
@@ -110,7 +110,7 @@ A certain data structure is expected so that the workflow can run smoothly: it s
         └── FILENAME-Tnnnn.tif
  ```
 
-Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1-Deconv, nuclei_segmentation, cell_segmentation, etc.). Changes in the details concerning file names can still be cahnged in the [configuration file](config.cfg).
+Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1-Deconv, nuclei_segmentation, cell_segmentation, etc.). Changes in the details concerning file names can still be changed in the [configuration file](config.cfg).
 
 ## Expected initial files
 
