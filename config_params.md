@@ -1,28 +1,41 @@
 # Configuration file parameters
 
+General parameters for each tasks are configured through a global configuration file. For example, deconvolution parameters common to all images can be controlled by:
+
+```
+[DeconvolutionTask]
+psf_dir=PATH_TO_PSF_IMAGES
+out_suffix=-Deconv
+niter=128
+max_patch_size=(9999,9999,9999)
+```
+
+In the configuration file changes in file/folder naming convention, etc, can also be done to adapt to already existing datasets, as long as all datasets follow the same structure.
+
 The configuration file is subdivided into main sections
 
 
-## 1) Denoising/Deconvolution
-## 2) Lineage
+### **1) Denoising/Deconvolution**
+### **2) Lineage**
     Gets all of the spots informations from the existing MaMuT .xml and parses them for basic feature extraction 
-## 3) Nuclei segmentation
+### **3) Nuclei segmentation**
     Performs nuclei segmentation model training and prediction tasks on image data based on existing MaMuT .xml tracks.
-## 4) Cell segmentation
+### **4) Cell segmentation**
     Performs cell and lumen (+ epithelium) segmentation model training and prediction tasks on image data, based on predicted nuclei segmentation.
-## 5) Features
+### **5) Features**
     Extracts features based on the segmented label maps
-## 6) Meshes
+### **6) Meshes**
     Creates .vtk meshes based on the cell and nuclei segmentation label maps
-## 7) Tracking
+### **7) Tracking**
     Performs tracking model training and prediction tasks on image data based on existing nuclei segmentation.
 
 
 
 
 > **Important points**: All of the segmentation tasks ultimately depend on existing seeds, i.e. spots from a MaMuT .xml tracking file. Therefore, to start from complete scratch, one should first get tracking data, using either [Mastodon](https://github.com/mastodon-sc/mastodon) or [Elephant](https://elephant-track.github.io/#/v0.3/)
+---
 
-
+## Common tasks
 Each of the main sections described above contain one or more luigi-based tasks. For nuclei, cell, and tracking predictions a similar structure is adopted. Considering X = [ *Nuclei*, *Cell*, *Tracking* ]:
 
 - **BuildXTrainingRecordTask** : generates all of the tensorflow records necessary to perform training of a model based on dense annotations. These annotations are searched inside folders called `X_annot`, which should be present inside each experiment folder, and should be `int16` stacks with same naming as the corresponding raw images ( A step-by-step procedure on how to get first annotations done is explained in the [3D_annotator notebook](/notebooks/3D_annotator.ipynb) ). These records are saved as .tfrec files containing the annotation/raw image pairs, and are usually stored inside a models folder. If new datasets are incorporated and a retraining of the model should be done, new .tfrec files should be created and added to the folder. 

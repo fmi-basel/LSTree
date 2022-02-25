@@ -3,28 +3,28 @@
 
 This repository hosts the version of the code used for the [preprint](https://www.biorxiv.org/content/10.1101/2021.05.12.443427v1) *Multiscale light-sheet organoid imaging framework* (de Medeiros, Ortiz et al 2021).
 
-**LSTree** is a digital organoid and lineage tree extraction framework for light sheet movies. It provides pre-processing, analysis and visualization tools which generate multiple features from the 3D recorded data. Ultimately, the extracted features can be visualized onto both lineage trees and 3D segmentation meshes in a combined way via a web-based viewer.
+**LSTree** is a digital organoid and lineage tree extraction framework for light sheet movies. It provides pre-processing and analysis tools to extract multiple features from the 3D recorded data. Ultimately, the extracted features can be visualized onto both lineage trees and 3D segmentation meshes in a combined way via a web-based viewer.
 
 Below you will find instructions on how to install the environment to run LSTree as well as how to run it on the two example datasets.
 
-# Main Sections
+# Table of Contents
 
-## 0) Installation
+###  [Installation](#Installation)
 
-Main steps for installing LSTree can be found below in the Installation section.
 
-## 1) [Example](/example/)
+
+### [Example](/example/)
 
 Step-by-step guide of the main functions on two example datasets.
 
-## 2) [Utils](/notebooks/)
+### [Utils](/notebooks/)
 A compendium of utilities we initially created to aid on 3D annotations and checking segmentation quality. Also includes the cropping notebook used as a pre-processing step.
 
-## 3) [Models](/models/)
+### [Models](/models/)
 
 Gathers all of the models trained for segmentation and linega tree prediction used in the manuscript. 
 
-## 4) [Webviewer](/webview/)
+### [Webviewer](/webview/)
 
 A multiscale visualization tool that aims at bringing lineage trees and segmented data together in one viewer.
 
@@ -44,10 +44,13 @@ The size of the deep learning models might need to be adjusted based on the avai
 
 ## Installation steps
 
-It is recommended to create a new python environment and install visualization libraries and cuda (GPU support) with conda:
+It is recommended to create a new python environment and install visualization libraries and cuda (GPU support) with conda. First create the new environment:
 
 ```bash
 conda create -n lstree python=3.7
+```
+Activate is via:
+```bash
 conda activate lstree
 ```
 Important: currently setup.py uses setuptools in order to install all the packages. Since pytables uses Distutils, we need to install it by hand:
@@ -57,7 +60,7 @@ conda install -c pyviz pytables
 ```
 
 
-> :warning: **Cuda GPU support and Tensorflow**: we have tested LSTree using specific version for NVIDIA cudatoolkit (version 10.1) and NVIDIA CUDA® Deep Neural Network library (cuDNN) (version 7) libraries that work with Tensorflow 2.3. This is in accordance to the guidelines from Tensorflow, as specified their [website](https://www.tensorflow.org/install/source#gpu). Therefore it is recommended that you have the right NVIDA driver - according to [wandb.ai](https://wandb.ai/wandb/common-ml-errors/reports/How-to-Correctly-Install-TensorFlow-in-a-GPU-Enabled-Laptop--VmlldzozMDYxMDQ) it should be 418.x or higher. For more information please visit the [tensorflow.org](https://www.tensorflow.org/) website. 
+> :warning: **Cuda GPU support and Tensorflow**: we have tested LSTree using specific version for NVIDIA cudatoolkit (version 10.1) and NVIDIA CUDA® Deep Neural Network library (cuDNN) (version 7.6) libraries that work with Tensorflow 2.3. This is in accordance to the guidelines from Tensorflow, as specified their [website](https://www.tensorflow.org/install/source#gpu). Therefore it is recommended that you have the right NVIDIA driver - according [NVIDIA website](https://docs.nvidia.com/deploy/cuda-compatibility/) this should be equal or greater than 418.39. For more information please visit the [tensorflow.org](https://www.tensorflow.org/) website. 
 
 
 Considering the NVIDIA driver to be already installed, please install the cuda related libraries via:
@@ -70,11 +73,13 @@ Finally we clone this repository and install it onto the new environment:
 
 ```bash
 git clone https://github.com/fmi-basel/LSTree.git
+```
+```bash
 pip install LSTree/
 ```
 
 # Usage
-The entire analysis pipeline is implemented as a Luigi workflow [https://github.com/spotify/luigi] and majors steps can be run with the commands detailed below and on the following sections. Jupyter notebooks for interactive [visualization of the results](/webview/webview.ipynb) and [drawing 3D labels](/notebooks/3D_annotator.ipynb) are also provided.
+The entire analysis pipeline is implemented as a [Luigi workflow](https://github.com/spotify/luigi) and majors steps can be run with the commands detailed below and on the following sections. Jupyter notebooks for interactive [visualization of the results](/webview/webview.ipynb) and [drawing 3D labels](/notebooks/3D_annotator.ipynb) are also provided.
 
 ## Folder structure
 A certain data structure is expected so that the workflow can run smoothly: it should ideally be organized with 2-level sub-folders for movie and channels respectively:
@@ -110,44 +115,40 @@ A certain data structure is expected so that the workflow can run smoothly: it s
         └── FILENAME-Tnnnn.tif
  ```
 
-Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1-Deconv, nuclei_segmentation, cell_segmentation, etc.). Changes in the details concerning file names can still be changed in the [configuration file](config.cfg).
+Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1-Deconv, nuclei_segmentation, cell_segmentation, etc.).
 
-## Expected initial files
+---
 
-Ideally, to be able to extract all features, each movie folder should include a MaMuT (`mamut.xml`) lineage tree (see Lineage tree section below) along with an [experiment.json](/example/data/002-Budding/experiment.json) file containing information about acquisition settings which are used e.g. for rescaling, deconvolution and for showing the data with the right temporal spacing, among others:
+## Initial Requirements 
+
+### **MaMuT.xml**
+
+As the name hints, **LSTree** heavily depends on the existence of tracking data, in form of a MaMuT `.xml` file, so that all features of a light-sheet recording can be extracted. To fulfill this requirement lineage trees can be created via [Mastodon](https://github.com/mastodon-sc/mastodon), or [Elephant](https://elephant-track.github.io/#/v0.3/) or any other tracking algorithm as long as the output can be written in MaMuT `.xml` form.Ideally, to be able to extract all features, each movie folder should include a MaMuT (`mamut.xml`) lineage tree (see Lineage tree section below) along with an [experiment.json](/example/data/002-Budding/experiment.json) file containing information about acquisition settings which are used e.g. for rescaling, deconvolution and for showing the data with the right temporal spacing, among others:
+
+
+### **experiment.json**
+En [experiment.json](/example/data/002-Budding/experiment.json) file containing information about acquisition settings which are used e.g. for rescaling, deconvolution and for showing the data with the right temporal spacing, among others:
 
 ```
 {
-    "mag": 25,
-    "time_interval": 0.1667,
+    "mag": 25,                  # Magnification (for getting the right PSF file)
+    "time_interval": 0.1667,    # value in hours
     "spacing": [
-        2,
-        0.26,
-        0.26
+        2,                      # Z
+        0.26,                   # Y
+        0.26                    # X
     ],
-    "wavelengths": {
-        "Channel0": 488,
+    "wavelengths": {            # in nanometers
+        "Channel0": 488,        
         "Channel1": 561,
         "Channel2": 638
     }
 }
 ```  
 
-
+---
 ## Configuration file
-General parameters for each tasks are configured through a global configuration file [config.cfg](config.cfg). For example, deconvolution parameters common to all images can be controlled by:
-
-```
-[DeconvolutionTask]
-psf_dir=PATH_TO_PSF_IMAGES
-out_suffix=-Deconv
-niter=128
-max_patch_size=(9999,9999,9999)
-```
-
-In the configuration file changes in file/folder naming convention, etc, can also be done to adapt to already existing datasets, as long as all datasets follow the same structure.
-
-More information is discussed within the [example guide](example/README.md).
+General parameters for each tasks are configured through a global configuration file [config.cfg](config.cfg), which is initially set up to run the [example](example/README.md) datasets.
 
 
 
