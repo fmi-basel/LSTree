@@ -39,30 +39,32 @@ The included web-based viewer allows visualizing a lineage tree with a linked vi
 # Processing steps
 
 ## 1. Cropping light-sheet movies
-Organoids' bounding boxes are first determined on a reference channel and independently for each frame using x,y and z maximum intensity projections (MIPs). Since multiple organoids might appear in the field of view (especially at early time-points), the largest object (or a manually selected object) on the last frame is tracked backward in time by finding its closest match in the previous frame until the first frame is reached. The minimum crop size required for the entire movie is then computed along each axis. At this point crops are reviewed with the included tool: [crop_movie.ipynb](notebooks/crop_movie.ipynb) and manual corrections can be made, for instance to account for stage movements during medium change. Finally all time-points and channels are cropped by centering the global bounding box on the tracked organoid.
+Organoids' bounding boxes are first determined on a reference channel and independently for each frame using x,y and z maximum intensity projections (MIPs). Since multiple organoids might appear in the field of view (especially at early time-points), the largest object (or a manually selected object) on the last frame is tracked backward in time by finding its closest match in the previous frame until the first frame is reached. The minimum crop size required for the entire movie is then computed along each axis. At this point crops are reviewed with the included tool: [crop_movie.ipynb](../notebooks/crop_movie.ipynb) and manual corrections can be made, for instance to account for stage movements during medium change. Finally all time-points and channels are cropped by centering the global bounding box on the tracked organoid.
 
 <img src="../docs/cropping_tool.png" width="800"/><br>
 
 ## 2. Denoising and deconvolution
-Raw images are first denoised with a model trained with the [Noise2Void](https://github.com/juglab/n2v) scheme on a few images randomly selected from each movies/channels. The minimum intensity projection along z is used to estimate the background image under the assumption that for each pixel the background is visible on at least one z-slice. Denoised and background-corrected images are then deconvolved with a measured PSF using Richardson-Lucy algorithm running on the GPU using [flowdec](https://github.com/hammerlab/flowdec). This step, including training the denoising model if needed, can be run manually with:
+Raw images are first denoised with [Noise2Void](https://github.com/juglab/n2v) trained on a few images randomly selected from each movies/channels. The minimum intensity projection along z is used to estimate the background image under the assumption that for each pixel the background is visible on at least one z-slice. Denoised and background-corrected images are then deconvolved with a measured PSF using Richardson-Lucy algorithm running on the GPU using [flowdec](https://github.com/hammerlab/flowdec). This step, including training the denoising model if needed, can be run manually with:
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiDeconvolutionTask
 ```
 
 ## 3. Lineage tree
-LSTree works directly directly with exported MaMuT `.xml`git files that contain trees made using [Mastodon](https://github.com/mastodon-sc/mastodon) Fiji plugin. Subsequently a deep learning model can be (re)trained to predict trees that require fewer manual corrections. Alternatively, one can also use the output from [Elephant](https://elephant-track.github.io/#/v0.3/) ( as MaMuT `.xml` ) to fine tune an existing model or just as final lineage tree output for further processing (segmentation and feature extraction steps). 
+LSTree works directly with MaMuT `.xml` files that contain tracking data made using [Mastodon](https://github.com/mastodon-sc/mastodon) Fiji plugin. Subsequently a deep learning model can be (re)trained to predict trees that require fewer manual corrections. Alternatively, one can also use the output from [Elephant](https://elephant-track.github.io/#/v0.3/) ( as MaMuT `.xml` ) to fine tune an existing model or just as final lineage tree output for further processing (segmentation and feature extraction steps). 
+To trigger the prediction of lineage trees run:
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiBuildTreeTask
 ```
 
-The tree prediction outputs include a `.xml` file that can be opened with Mastodon as well as a plots of the predicted tree with overlaid information to facilitate corrections (e.g. nuclei volume, tracking embedding distance).
+The tree prediction outputs include a `.xml` file that can be opened with Mastodon as well as a plots of the predicted tree with overlaid information to facilitate corrections (e.g. nuclei volume, tracking embedding distance). One example of such outputs canbe seen below:
 
+**Tracking prediction outputs**<br>
 <img src="../docs/tree_pred.png" width="700"/><br>
 
 ## 4. Nuclei segmentation
-Nuclei are segmented in 3D following previously reported method: [RDCNet: Instance segmentation with a minimalist recurrent residual network](https://github.com/fmi-basel/RDCNet). A deep learning model model is trained with a mix of complete and partial annotations. Partial labels are obtained by placing a spheres at the position of each tracked nuclei. A small subset of the frames are fully annotated by manually expanding the labels to the full nuclei. Labels can be edited with the provided [notebook](notebooks/3D_annotator.ipynb). Model architecture and training parameters can be controlled as illustrated in the example configuration file. In particular, initial weights can be supplied with the `resume_weights` option to refine an existing model. To train a model run:
+Nuclei are segmented in 3D following previously reported method: [RDCNet: Instance segmentation with a minimalist recurrent residual network](https://github.com/fmi-basel/RDCNet). A deep learning model model is trained with a mix of complete and partial annotations. Partial labels are obtained by placing a spheres at the position of each tracked nuclei. A small subset of the frames are fully annotated by manually expanding the labels to the full nuclei. Labels can be edited with the provided [notebook](../notebooks/3D_annotator.ipynb). Model architecture and training parameters can be controlled as illustrated in the example configuration file. In particular, initial weights can be supplied with the `resume_weights` option to refine an existing model. To train a model run:
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree NucleiSegmentationTrainingTask
