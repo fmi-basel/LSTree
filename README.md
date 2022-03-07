@@ -69,11 +69,12 @@ Considering the NVIDIA driver to be already installed, please install the cuda r
 conda install cudatoolkit=10.1 cudnn=7
 ```
 
-Finally we clone this repository and install it onto the new environment:
+Finally we clone this repository and install it onto the new environment. Be aware that currently the example datasets are included in the repository and therefore cloning will require around 1 GB of storage space. Furthermore, cloning this repository will also install [inter-view](https://github.com/fmi-basel/inter-view), [dl-utils](https://github.com/fmi-basel/dl-utils) and [improc](https://github.com/fmi-basel/improc), as LSTree utilizes many functionalities from them.
 
 ```bash
 git clone https://github.com/fmi-basel/LSTree.git
 ```
+
 ```bash
 pip install LSTree/
 ```
