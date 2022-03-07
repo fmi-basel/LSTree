@@ -12,6 +12,7 @@ setup(name='LSTree',
       packages=find_packages(exclude=['tests']),
       install_requires=[
           'holoviews',
+          'jupyter notebook',
           'bokeh',
           'panel',
           'param',

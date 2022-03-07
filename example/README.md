@@ -6,7 +6,7 @@ To get acquainted with LSTree, we provide two test datasets that can be used for
 
 ### 1) Processing the example data
 
-As long as the data has been cropped and lineage tree created/curated and exported via MaMuT .xml ( which is the case for the example datasets ), the entire LSTree workflow can be activated via
+As long as the data has been cropped and lineage tree created/curated and exported via MaMuT .xml ( which is the case for the example datasets ), the entire LSTree workflow can be activated via the command below (this takes around 10 minutes with the hardware configuration we used):
 
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
@@ -17,7 +17,7 @@ By default this command will run on the test dataset provided (002-Budding and 0
 
 ### 2) Visualization of the output
 
-After processing is finished all the outputs can be visualized with the [webviewer](../webview/webview.ipynb).
+After processing is finished all the outputs can be visualized with the [webviewer](../webview/README.md).
 The included web-based viewer allows visualizing a lineage tree with a linked view of the 3D cell/nuclei segmentation at a given timepoint. More information on how to use it, along with example notebook can be found [here](../webview/README.md).
 
 
@@ -39,7 +39,7 @@ The included web-based viewer allows visualizing a lineage tree with a linked vi
 # Processing steps
 
 ## 1. Cropping light-sheet movies
-Organoids' bounding boxes are first determined on a reference channel and independently for each frame using x,y and z maximum intensity projections (MIPs). Since multiple organoids might appear in the field of view (especially at early time-points), the largest object (or a manually selected object) on the last frame is tracked backward in time by finding its closest match in the previous frame until the first frame is reached. The minimum crop size required for the entire movie is then computed along each axis. At this point crops are reviewed with the included tool: [crop_movie.ipynb](../notebooks/crop_movie.ipynb) and manual corrections can be made, for instance to account for stage movements during medium change. Finally all time-points and channels are cropped by centering the global bounding box on the tracked organoid.
+For the recordings of days, organoids may drift inside the matrigel drop and need to be registered back so that the data can be analyzed. In the [crop_movie.ipynb](../notebooks/crop_movie.ipynb) notebook organoids' bounding boxes are first determined on a reference channel and independently for each frame using x,y and z maximum intensity projections (MIPs). Since multiple organoids might appear in the field of view (especially at early time-points), the largest object (or a manually selected object) on the last frame is tracked backward in time by finding its closest match in the previous frame until the first frame is reached. The minimum crop size required for the entire movie is then computed along each axis. At this point crops are reviewed with an included included tool in the notebook and manual corrections can be made, for instance to account for stage movements during medium change. Finally all time-points and channels are cropped by centering the global bounding box on the tracked organoid.
 
 <img src="../docs/cropping_tool.png" width="800"/><br>
 
@@ -49,6 +49,8 @@ Raw images are first denoised with [Noise2Void](https://github.com/juglab/n2v) t
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiDeconvolutionTask
 ```
+> **Important**: The outputs from this step include a folder with '-Deconv' as a suffix, and the other steps use the images inside as input for segmentation. If this is not needed, a - so far still hacky - way around it is to copy the raw images to an empty folder with the same name before running the config file.
+
 
 ## 3. Lineage tree
 LSTree works directly with MaMuT `.xml` files that contain tracking data made using [Mastodon](https://github.com/mastodon-sc/mastodon) Fiji plugin. Subsequently a deep learning model can be (re)trained to predict trees that require fewer manual corrections. Alternatively, one can also use the output from [Elephant](https://elephant-track.github.io/#/v0.3/) ( as MaMuT `.xml` ) to fine tune an existing model or just as final lineage tree output for further processing (segmentation and feature extraction steps). 

@@ -28,7 +28,7 @@ The viewer is then accessible either as a jupyter notebook  or directly served t
 
 ```bash
 cd /PATH_TO_LSTREE_REPOSITORY/webview
-panel serve --static-dirs static_data="static_data" --show webview/webview.ipynb --args --basedir PATH_TO_PROCESSED_DATA
+panel serve --static-dirs static_data="static_data" --show webview.ipynb --args --basedir PATH_TO_PROCESSED_DATA
 ```
 
 or on a remote machine:
@@ -42,6 +42,6 @@ Example:
 
 ```bash
 cd /LSTree/webview
-panel serve --static-dirs static_data="static_data" --port 7007 --allow-websocket-origin=workstation1:7007 webview.ipynb  --args --basedir /LSTree/data
+panel serve --static-dirs static_data="static_data" --port 7007 --allow-websocket-origin=workstation1:7007 webview.ipynb  --args --basedir /LSTree/example/data
 ```
 
