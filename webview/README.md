@@ -31,6 +31,8 @@ cd /PATH_TO_LSTREE_REPOSITORY/webview
 panel serve --static-dirs static_data="static_data" --show webview.ipynb --args --basedir PATH_TO_PROCESSED_DATA
 ```
 
+Here, `PATH_TO_PROCESSED_DATA` is the full path to where the repository or the datasets folders ( following the structure presented in the [Usage](../README.md) section ).
+
 or on a remote machine:
 
 ```bash
@@ -38,10 +40,10 @@ cd /PATH_TO_LSTREE_REPOSITORY/webview
 panel serve --static-dirs static_data="static_data" --port PORT --allow-websocket-origin=WORKSTATION:PORT webview.ipynb  --args --basedir PATH_TO_PROCESSED_DATA
 ```
 
-Example:
+Example, considering that the data is located in /Data:
 
 ```bash
 cd /LSTree/webview
-panel serve --static-dirs static_data="static_data" --port 7007 --allow-websocket-origin=workstation1:7007 webview.ipynb  --args --basedir /LSTree/example/data
+panel serve --static-dirs static_data="static_data" --port 7007 --allow-websocket-origin=workstation1:7007 webview.ipynb  --args --basedir /Data/LSTree/example/data
 ```
 

@@ -11,6 +11,7 @@ Below you will find instructions on how to install the environment to run LSTree
 
 ###  [Installation](#Installation)
 
+###  [Usage](#Usage)
 
 
 ### [Example](/example/)
