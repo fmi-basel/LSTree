@@ -69,6 +69,10 @@ Considering the NVIDIA driver to be already installed, please install the cuda r
 ```bash
 conda install cudatoolkit=10.1 cudnn=7
 ```
+To run the notebooks present as example and utils here, you also need `jupyter notebook` installed:
+```bash
+conda install jupyter notebook
+```
 
 Finally we clone this repository and install it onto the new environment. Be aware that currently the example datasets are included in the repository and therefore cloning will require around 1 GB of storage space. Furthermore, cloning this repository will also install [inter-view](https://github.com/fmi-basel/inter-view), [dl-utils](https://github.com/fmi-basel/dl-utils) and [improc](https://github.com/fmi-basel/improc), as LSTree utilizes many functionalities from them.
 
