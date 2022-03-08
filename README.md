@@ -13,13 +13,14 @@ Below you will find instructions on how to install the environment to run LSTree
 
 ###  [Usage](#Usage)
 
+General information on the way LSTree functions.
 
 ### [Example](/example/)
 
 Step-by-step guide of the main functions on two example datasets.
 
 ### [Utils](/notebooks/)
-A compendium of utilities we initially created to aid on 3D annotations and checking segmentation quality. Also includes the cropping notebook used as a pre-processing step.
+A compendium of utilities we initially created to aid on 3D annotations and checking segmentation quality. Also includes a cropping tool which can be used as a pre-processing step. These utilities are all written in form of jupyter notebooks.
 
 ### [Models](/models/)
 

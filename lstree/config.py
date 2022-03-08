@@ -1,8 +1,6 @@
 import luigi
 
-SPACING = {25: (2, 0.26, 0.26), 37: (2, 0.173, 0.173)}  # check if this is explicitly used or if spacing comes solely from config.cfg and experiment.json files!
-
-# yapf: disable
+SPACING = {25: (2, 0.26, 0.26), 37: (2, 0.173, 0.173)} 
 
 class ExperimentParams(luigi.Config):
     movie_config_name = luigi.Parameter('experiment.json', description='Name of config file (magnification, wavelength, etc.) expected in each movie folder')

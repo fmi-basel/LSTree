@@ -5,20 +5,6 @@ The included web-based viewer allows visualizing a lineage tree with a linked vi
 
 <!-- ![webviewer](../docs/webviewer_presentation.mp4) -->
 
-Extracted features such as the nuclei volume can be viewed as color:  
-<img src="../docs/viewer_volume.png" width="1000"/><br>
-
-Orthogonal views of the original image can be displayed to double check the segmentation:  
-<img src="../docs/viewer_stack.png" width="1000"/><br>
-
-It is also possible to highlight certain areas of the tree by manual selection:  
-<img src="../docs/viewer_selection.png" width="1000"/><br>
-
-To be responsive, the viewer relies on smoothed 3D meshes pre-generated from the segmentation stacks with:
-```bash
-LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
-```
-
 ## Running via the notebook / port forwarding
 You can run the Webviewer via the jupyter [notebook](webview.ipynb). This is a good first way to look at the tree-meshes visualization, as it is set to look initially at the processed example datasets.
 
@@ -46,4 +32,20 @@ Example, considering that the data is located in /Data:
 cd /LSTree/webview
 panel serve --static-dirs static_data="static_data" --port 7007 --allow-websocket-origin=workstation1:7007 webview.ipynb  --args --basedir /Data/LSTree/example/data
 ```
+
+Extracted features such as the nuclei volume can be viewed as color:  
+<img src="../docs/viewer_volume.png" width="1000"/><br>
+
+Orthogonal views of the original image can be displayed to double check the segmentation:  
+<img src="../docs/viewer_stack.png" width="1000"/><br>
+
+It is also possible to highlight certain areas of the tree by manual selection:  
+<img src="../docs/viewer_selection.png" width="1000"/><br>
+
+To be responsive, the viewer relies on smoothed 3D meshes pre-generated from the segmentation stacks with:
+```bash
+LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
+```
+
+
 

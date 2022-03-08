@@ -1,6 +1,16 @@
 # Utilities
 
-Here you can find a couple of useful utilities for using with LSTree.
+Here you can find a couple of useful tools for using with LSTree. They are presented her in form of jupyter notebooks, and in order to use them you can just activate the `lstree` environment and run 
+
+```bash
+jupter notebook --port=XXXX
+```
+The jupyter notebook should initialize and port forward itself to your localhost using the XXXX specified port. This way you just need to open a browser and type:
+
+```bash
+loalhost:XXXX
+```
+and the jupyter notebook should open. Then you can browser yourself to the /notebook folder where the utilities are located.
 
 ## 1. Cropping light-sheet movies
 Organoids' bounding boxes are first determined on a reference channel and independently for each frame using x,y and z maximum intensity projections (MIPs). Since multiple organoids might appear in the field of view (especially at early time-points), the largest object (or a manually selected object) on the last frame is tracked backward in time by finding its closest match in the previous frame until the first frame is reached. The minimum crop size required for the entire movie is then computed along each axis. At this point crops are reviewed with the included tool: [crop_movie.ipynb](crop_movie.ipynb) and manual corrections can be made, for instance to account for stage movements during medium change. Finally all time-points and channels are cropped by centering the global bounding box on the tracked organoid.
