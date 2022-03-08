@@ -12,7 +12,6 @@ setup(name='LSTree',
       packages=find_packages(exclude=['tests']),
       install_requires=[
           'holoviews',
-          'jupyter notebook',
           'bokeh',
           'panel',
           'param',
@@ -31,6 +30,6 @@ setup(name='LSTree',
           'dl-utils @ git+https://github.com/fmi-basel/dl-utils',
           'improc @ git+https://github.com/fmi-basel/improc',
           'inter_view @ git+https://github.com/fmi-basel/inter-view',
-          'flowdec',
+          'flowdec'
       ],
       zip_safe=False)
