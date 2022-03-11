@@ -8,7 +8,7 @@ jupter notebook --port=XXXX
 The jupyter notebook should initialize and port forward itself to your localhost using the XXXX specified port. This way you just need to open a browser and type:
 
 ```bash
-loalhost:XXXX
+localhost:XXXX
 ```
 and the jupyter notebook should open. Then you can browser yourself to the /notebook folder where the utilities are located.
 

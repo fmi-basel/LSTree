@@ -1,38 +1,8 @@
 # Introduction - LSTree example usage
 
-To get acquainted with LSTree, we provide two test datasets that can be used for running the workflow. For simplicity they have already been pre-processed (only cropping, to reduce memory requirements and processing time) and the example lineage trees have been created and exported as MaMuT .xml files. Below we will describe what these steps entail, as well as providing more in-depth information on the main tasks behind the workflow.
+To get acquainted with LSTree, we provide two test datasets that can be used for running the workflow. For simplicity they have already been pre-processed (only cropping, to reduce memory requirements and processing time) and the example lineage trees have been created and exported as MaMuT .xml files. Below we will describe what these steps entail, as well as providing more in-depth information on the main tasks behind the workflow.`
 
-## Quickstart
-
-### 1) Processing the example data
-
-As long as the data has been cropped and lineage tree created/curated and exported via MaMuT .xml ( which is the case for the example datasets ), the entire LSTree workflow can be activated via the command below (this takes around 10 minutes with the hardware configuration we used):
-
-```bash
-LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
-```
-
-By default this command will run on the test dataset provided (002-Budding and 003-Enterocyst) using all models trained with intestinal organoid images. Therefore, the configuration file must be first adapted to the right input paths before using it on new user data.
-
-
-### 2) Visualization of the output
-
-After processing is finished all the outputs can be visualized with the [webviewer](../webview/README.md).
-The included web-based viewer allows visualizing a lineage tree with a linked view of the 3D cell/nuclei segmentation at a given timepoint. More information on how to use it, along with example notebook can be found [here](../webview/README.md).
-
-
-
-
----
-
-> :warning: **Important: How to rerun tasks**: If there are samples for which the output files already exist, then these are skipped. To rerun a specific task* all necessary intermediate and final outputs should be deleted. That also include training deep learning models, i.e. if a trained model exist, it is used without retraining. ( *Lineage tree prediction is currently the only task that can resume in case it is suddenly stopped. ) 
-
-
-
----
-
-
-
+Each new step of the workflow will generate output within a dedicated folder, fwith specific naming conventions. These naming conventions can be changed in the `config.cfg` file.
 
 
 
@@ -49,8 +19,9 @@ Raw images are first denoised with [Noise2Void](https://github.com/juglab/n2v) t
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiDeconvolutionTask
 ```
-> **Important**: The outputs from this step include a folder with '-Deconv' as a suffix, and the other steps use the images inside as input for segmentation. If this is not needed, a - so far still hacky - way around it is to copy the raw images to an empty folder with the same name before running the config file.
+> **-Deconv folder requirement**: The outputs from this step include a folder with '-Deconv' as a suffix, and the other steps use the images inside as input for segmentation. If this is not needed, a - so far still hacky - way around it is to copy the raw images to an empty folder with the same name before running the config file.
 
+> **PSF estimation**: As expected during deconvolution, a point-spread-function (PSF) of the optics used for imaging is necessary. You can uye [Huygens PSF Distiller](https://svi.nl/Huygens-PSF-Distiller) or the [PSF extraction from python-microscopy](http://python-microscopy.org/doc/PSFExtraction.html).
 
 ## 3. Lineage tree
 LSTree works directly with MaMuT `.xml` files that contain tracking data made using [Mastodon](https://github.com/mastodon-sc/mastodon) Fiji plugin. Subsequently a deep learning model can be (re)trained to predict trees that require fewer manual corrections. Alternatively, one can also use the output from [Elephant](https://elephant-track.github.io/#/v0.3/) ( as MaMuT `.xml` ) to fine tune an existing model or just as final lineage tree output for further processing (segmentation and feature extraction steps). 
@@ -141,6 +112,39 @@ The segmentation pipeline requires manual annotations of nuclei and lumen/epithe
 
 **Segmentation viewer**<br>
 <img src="../docs/segmentation_viewer.png" width="500"/><br>
+
+---
+
+
+
+
+## Quickstart
+
+### 1) Processing the example data
+
+For an easy first-time use, you can run everything in one go via a single command. This will trigger the entire workflow on two example datasets( [002-Budding](/example/data/002-Budding/) and [003-Enterocyst](/example/data/003-Enterocyst/) ) using all models trained with `intestinal organoid images` (this takes around 10 minutes with the hardware configuration we used).
+
+As long as the data has been cropped and lineage tree created/curated and exported via MaMuT .xml ( which is the case for the example datasets ), the entire LSTree workflow can be activated via the command below (this takes around 10 minutes with the [hardware configuration we used](LINK)):
+
+```bash
+LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree ViewerTask
+```
+
+It is also possible to run each step separately on the example data.
+If you start from scratch using a different dataset(s) the configuration file needs to be properly changed. More information can be found inside the [config.cfg](../config.cfg) itself as well as in the [configuration file parameters](../config_params.md) readme.
+### 2) Visualization of the output
+
+After processing is finished all the outputs can be visualized with the [webviewer](../webview/README.md).
+The included web-based viewer allows visualizing a lineage tree with a linked view of the 3D cell/nuclei segmentation at a given timepoint. More information on how to use it, along with example notebook can be found [here](../webview/README.md).
+
+
+
+
+---
+
+> :warning: **Important: How to rerun tasks**: If there are samples for which the output files already exist, then these are skipped. To rerun a specific task* all necessary intermediate and final outputs should be deleted. That also include training deep learning models, i.e. if a trained model exist, it is used without retraining. ( *Lineage tree prediction is currently the only task that can resume in case it is suddenly stopped. ) 
+
+
 
 ---
 

@@ -3,7 +3,7 @@
 
 This repository hosts the version of the code used for the [preprint](https://www.biorxiv.org/content/10.1101/2021.05.12.443427v1) *Multiscale light-sheet organoid imaging framework* (de Medeiros, Ortiz et al 2021).
 
-**LSTree** is a digital organoid and lineage tree extraction framework for light sheet movies. It combines pre-processing and analysis tools to extract multiple features from the 3D recorded data. Ultimately, the extracted features can be visualized onto both lineage trees and 3D segmentation meshes in a combined way via a web-based viewer.
+**LSTree** is a digital organoid and lineage tree extraction workflow for light-sheet movies. It combines pre-processing and analysis tools to extract multiple features from the 3D recorded data. Ultimately, the extracted features can be visualized onto both lineage trees and 3D segmentation meshes in a combined way via a web-based viewer.
 
 Below you will find instructions on how to install the environment to run LSTree as well as how to run it on the two example datasets.
 
@@ -88,6 +88,43 @@ pip install LSTree/
 # Usage
 The entire analysis pipeline is implemented as a [Luigi workflow](https://github.com/spotify/luigi) and majors steps can be run with the commands detailed below and on the following sections. Jupyter notebooks for interactive [visualization of the results](/webview/webview.ipynb) and [drawing 3D labels](/notebooks/3D_annotator.ipynb) are also provided.
 
+
+
+## Initial Requirements 
+
+### **MaMuT.xml**
+
+As the name hints, **LSTree** heavily depends on the existence of tracking data, in form of a MaMuT `.xml` file, so that all features of a light-sheet recording can be extracted. To fulfill this requirement lineage trees can be created via [Mastodon](https://github.com/mastodon-sc/mastodon), or [Elephant](https://elephant-track.github.io/#/v0.3/) or any other tracking algorithm as long as the output can be written in MaMuT `.xml` form.Ideally, to be able to extract all features, each movie folder should include a MaMuT (`mamut.xml`) lineage tree (see Lineage tree section below) along with an [experiment.json](/example/data/002-Budding/experiment.json) file containing information about acquisition settings which are used e.g. for rescaling, deconvolution and for showing the data with the right temporal spacing, among others:
+
+
+### **experiment.json**
+En [experiment.json](/example/data/002-Budding/experiment.json) file containing information about acquisition settings which are used e.g. for rescaling, deconvolution and for showing the data with the right temporal spacing, among others:
+
+```
+{
+    "mag": 25,                  # Magnification (for getting the right PSF file)
+    "time_interval": 0.1667,    # value in hours
+    "spacing": [
+        2,                      # Z
+        0.26,                   # Y
+        0.26                    # X
+    ],
+    "wavelengths": {            # in nanometers
+        "Channel0": 488,        
+        "Channel1": 561,
+        "Channel2": 638
+    }
+}
+```  
+### **dataset.xml**
+
+Before poerforming segmentation and feature extraction, LSTree requires a `dataset.xml` file that has the structure of the BigDataViewer `.xml`.
+- some information is gotten from here that is necessary for running the segmentation (spacing?`?)  
+
+LINK TO DATASET FILE IN EXAMPLE DATA
+more information linbk to bdv!!
+
+
 ## Folder structure
 A certain data structure is expected so that the workflow can run smoothly: it should ideally be organized with 2-level sub-folders for movie and channels respectively:
 
@@ -96,6 +133,7 @@ A certain data structure is expected so that the workflow can run smoothly: it s
 └── MOVIE_DIRECTORY
     ├── experiment.json
     ├── mamut.xml
+    ├── dataset.xml
     ├── nuclei_annot
     │   ├── FILENAME-T0017.tif
     │   ├── FILENAME-T0134.tif
@@ -124,36 +162,10 @@ A certain data structure is expected so that the workflow can run smoothly: it s
 
 Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1-Deconv, nuclei_segmentation, cell_segmentation, etc.).
 
----
-
-## Initial Requirements 
-
-### **MaMuT.xml**
-
-As the name hints, **LSTree** heavily depends on the existence of tracking data, in form of a MaMuT `.xml` file, so that all features of a light-sheet recording can be extracted. To fulfill this requirement lineage trees can be created via [Mastodon](https://github.com/mastodon-sc/mastodon), or [Elephant](https://elephant-track.github.io/#/v0.3/) or any other tracking algorithm as long as the output can be written in MaMuT `.xml` form.Ideally, to be able to extract all features, each movie folder should include a MaMuT (`mamut.xml`) lineage tree (see Lineage tree section below) along with an [experiment.json](/example/data/002-Budding/experiment.json) file containing information about acquisition settings which are used e.g. for rescaling, deconvolution and for showing the data with the right temporal spacing, among others:
+> :warning: **Folder structure organisation**: 
 
 
-### **experiment.json**
-En [experiment.json](/example/data/002-Budding/experiment.json) file containing information about acquisition settings which are used e.g. for rescaling, deconvolution and for showing the data with the right temporal spacing, among others:
 
-```
-{
-    "mag": 25,                  # Magnification (for getting the right PSF file)
-    "time_interval": 0.1667,    # value in hours
-    "spacing": [
-        2,                      # Z
-        0.26,                   # Y
-        0.26                    # X
-    ],
-    "wavelengths": {            # in nanometers
-        "Channel0": 488,        
-        "Channel1": 561,
-        "Channel2": 638
-    }
-}
-```  
-
----
 ## Configuration file
 General parameters for each tasks are configured through a global configuration file [config.cfg](config.cfg), which is initially set up to run the [example](example/README.md) datasets.
 
@@ -172,6 +184,10 @@ General parameters for each tasks are configured through a global configuration 
 
 
 ---
+## Acknowledgements
 
+Big thanks to the [Liberali Lab](https://liberalilab.org/) for enabling the creation of these tools, the support and help with the initial development, discussions and future plans of LSTree. Also to Ko Sugawara for the nice collaboration regarding the utilization of `Elephant` and its integration within the `LSTree` umbrella. Thanks to Vladimir Ulman for helpful discussions regarding tracking in general, and Markus Rempfler forimportant initial support with RDCNet implementations. Also big thanks to Tim-Oliver for insightful discussions and help with debugging. 
+
+---
 ## Funding support
 This work was supported by EMBO (ALTF 571-2018 to G.M.), SNSF (POOP3_157531 to P.L.). This work received funding from the ERC under the European Union’s Horizon 2020 research and innovation programme (grant agreement no. 758617).
