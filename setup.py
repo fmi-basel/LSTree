@@ -30,6 +30,6 @@ setup(name='LSTree',
           'dl-utils @ git+https://github.com/fmi-basel/dl-utils',
           'improc @ git+https://github.com/fmi-basel/improc',
           'inter_view @ git+https://github.com/fmi-basel/inter-view',
-          'flowdec',
+          'flowdec'
       ],
       zip_safe=False)

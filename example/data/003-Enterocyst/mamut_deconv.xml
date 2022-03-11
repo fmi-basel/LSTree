@@ -1,0 +1,1066 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TrackMate version="3.6.0">
+  <Model spatialunits="µm" timeunits="frame">
+    <FeatureDeclarations>
+      <SpotFeatures />
+      <EdgeFeatures />
+      <TrackFeatures />
+    </FeatureDeclarations>
+    <AllSpots nspots="127">
+      <SpotsInFrame frame="0" />
+      <SpotsInFrame frame="1" />
+      <SpotsInFrame frame="2" />
+      <SpotsInFrame frame="3" />
+      <SpotsInFrame frame="4" />
+      <SpotsInFrame frame="5" />
+      <SpotsInFrame frame="6" />
+      <SpotsInFrame frame="7" />
+      <SpotsInFrame frame="8" />
+      <SpotsInFrame frame="9" />
+      <SpotsInFrame frame="10" />
+      <SpotsInFrame frame="11" />
+      <SpotsInFrame frame="12" />
+      <SpotsInFrame frame="13" />
+      <SpotsInFrame frame="14" />
+      <SpotsInFrame frame="15" />
+      <SpotsInFrame frame="16" />
+      <SpotsInFrame frame="17" />
+      <SpotsInFrame frame="18" />
+      <SpotsInFrame frame="19" />
+      <SpotsInFrame frame="20" />
+      <SpotsInFrame frame="21" />
+      <SpotsInFrame frame="22" />
+      <SpotsInFrame frame="23" />
+      <SpotsInFrame frame="24" />
+      <SpotsInFrame frame="25" />
+      <SpotsInFrame frame="26" />
+      <SpotsInFrame frame="27" />
+      <SpotsInFrame frame="28" />
+      <SpotsInFrame frame="29" />
+      <SpotsInFrame frame="30" />
+      <SpotsInFrame frame="31" />
+      <SpotsInFrame frame="32" />
+      <SpotsInFrame frame="33" />
+      <SpotsInFrame frame="34" />
+      <SpotsInFrame frame="35" />
+      <SpotsInFrame frame="36" />
+      <SpotsInFrame frame="37" />
+      <SpotsInFrame frame="38" />
+      <SpotsInFrame frame="39" />
+      <SpotsInFrame frame="40" />
+      <SpotsInFrame frame="41" />
+      <SpotsInFrame frame="42" />
+      <SpotsInFrame frame="43" />
+      <SpotsInFrame frame="44" />
+      <SpotsInFrame frame="45" />
+      <SpotsInFrame frame="46" />
+      <SpotsInFrame frame="47" />
+      <SpotsInFrame frame="48" />
+      <SpotsInFrame frame="49" />
+      <SpotsInFrame frame="50" />
+      <SpotsInFrame frame="51" />
+      <SpotsInFrame frame="52" />
+      <SpotsInFrame frame="53" />
+      <SpotsInFrame frame="54" />
+      <SpotsInFrame frame="55" />
+      <SpotsInFrame frame="56" />
+      <SpotsInFrame frame="57" />
+      <SpotsInFrame frame="58" />
+      <SpotsInFrame frame="59" />
+      <SpotsInFrame frame="60" />
+      <SpotsInFrame frame="61" />
+      <SpotsInFrame frame="62" />
+      <SpotsInFrame frame="63" />
+      <SpotsInFrame frame="64" />
+      <SpotsInFrame frame="65" />
+      <SpotsInFrame frame="66" />
+      <SpotsInFrame frame="67" />
+      <SpotsInFrame frame="68" />
+      <SpotsInFrame frame="69" />
+      <SpotsInFrame frame="70" />
+      <SpotsInFrame frame="71" />
+      <SpotsInFrame frame="72" />
+      <SpotsInFrame frame="73" />
+      <SpotsInFrame frame="74" />
+      <SpotsInFrame frame="75" />
+      <SpotsInFrame frame="76" />
+      <SpotsInFrame frame="77" />
+      <SpotsInFrame frame="78" />
+      <SpotsInFrame frame="79" />
+      <SpotsInFrame frame="80" />
+      <SpotsInFrame frame="81" />
+      <SpotsInFrame frame="82" />
+      <SpotsInFrame frame="83" />
+      <SpotsInFrame frame="84" />
+      <SpotsInFrame frame="85" />
+      <SpotsInFrame frame="86" />
+      <SpotsInFrame frame="87" />
+      <SpotsInFrame frame="88" />
+      <SpotsInFrame frame="89" />
+      <SpotsInFrame frame="90" />
+      <SpotsInFrame frame="91" />
+      <SpotsInFrame frame="92" />
+      <SpotsInFrame frame="93" />
+      <SpotsInFrame frame="94" />
+      <SpotsInFrame frame="95" />
+      <SpotsInFrame frame="96" />
+      <SpotsInFrame frame="97" />
+      <SpotsInFrame frame="98" />
+      <SpotsInFrame frame="99" />
+      <SpotsInFrame frame="100" />
+      <SpotsInFrame frame="101" />
+      <SpotsInFrame frame="102" />
+      <SpotsInFrame frame="103" />
+      <SpotsInFrame frame="104" />
+      <SpotsInFrame frame="105" />
+      <SpotsInFrame frame="106" />
+      <SpotsInFrame frame="107" />
+      <SpotsInFrame frame="108" />
+      <SpotsInFrame frame="109" />
+      <SpotsInFrame frame="110" />
+      <SpotsInFrame frame="111" />
+      <SpotsInFrame frame="112" />
+      <SpotsInFrame frame="113" />
+      <SpotsInFrame frame="114" />
+      <SpotsInFrame frame="115" />
+      <SpotsInFrame frame="116" />
+      <SpotsInFrame frame="117" />
+      <SpotsInFrame frame="118" />
+      <SpotsInFrame frame="119" />
+      <SpotsInFrame frame="120" />
+      <SpotsInFrame frame="121" />
+      <SpotsInFrame frame="122" />
+      <SpotsInFrame frame="123" />
+      <SpotsInFrame frame="124" />
+      <SpotsInFrame frame="125" />
+      <SpotsInFrame frame="126" />
+      <SpotsInFrame frame="127" />
+      <SpotsInFrame frame="128" />
+      <SpotsInFrame frame="129" />
+      <SpotsInFrame frame="130" />
+      <SpotsInFrame frame="131" />
+      <SpotsInFrame frame="132" />
+      <SpotsInFrame frame="133" />
+      <SpotsInFrame frame="134" />
+      <SpotsInFrame frame="135" />
+      <SpotsInFrame frame="136" />
+      <SpotsInFrame frame="137" />
+      <SpotsInFrame frame="138" />
+      <SpotsInFrame frame="139" />
+      <SpotsInFrame frame="140" />
+      <SpotsInFrame frame="141" />
+      <SpotsInFrame frame="142" />
+      <SpotsInFrame frame="143" />
+      <SpotsInFrame frame="144" />
+      <SpotsInFrame frame="145" />
+      <SpotsInFrame frame="146" />
+      <SpotsInFrame frame="147" />
+      <SpotsInFrame frame="148" />
+      <SpotsInFrame frame="149" />
+      <SpotsInFrame frame="150" />
+      <SpotsInFrame frame="151" />
+      <SpotsInFrame frame="152" />
+      <SpotsInFrame frame="153" />
+      <SpotsInFrame frame="154" />
+      <SpotsInFrame frame="155" />
+      <SpotsInFrame frame="156" />
+      <SpotsInFrame frame="157" />
+      <SpotsInFrame frame="158" />
+      <SpotsInFrame frame="159" />
+      <SpotsInFrame frame="160" />
+      <SpotsInFrame frame="161" />
+      <SpotsInFrame frame="162" />
+      <SpotsInFrame frame="163" />
+      <SpotsInFrame frame="164" />
+      <SpotsInFrame frame="165" />
+      <SpotsInFrame frame="166" />
+      <SpotsInFrame frame="167" />
+      <SpotsInFrame frame="168" />
+      <SpotsInFrame frame="169" />
+      <SpotsInFrame frame="170" />
+      <SpotsInFrame frame="171" />
+      <SpotsInFrame frame="172" />
+      <SpotsInFrame frame="173" />
+      <SpotsInFrame frame="174" />
+      <SpotsInFrame frame="175" />
+      <SpotsInFrame frame="176" />
+      <SpotsInFrame frame="177" />
+      <SpotsInFrame frame="178" />
+      <SpotsInFrame frame="179" />
+      <SpotsInFrame frame="180" />
+      <SpotsInFrame frame="181" />
+      <SpotsInFrame frame="182" />
+      <SpotsInFrame frame="183" />
+      <SpotsInFrame frame="184" />
+      <SpotsInFrame frame="185" />
+      <SpotsInFrame frame="186" />
+      <SpotsInFrame frame="187" />
+      <SpotsInFrame frame="188" />
+      <SpotsInFrame frame="189" />
+      <SpotsInFrame frame="190" />
+      <SpotsInFrame frame="191" />
+      <SpotsInFrame frame="192" />
+      <SpotsInFrame frame="193" />
+      <SpotsInFrame frame="194" />
+      <SpotsInFrame frame="195" />
+      <SpotsInFrame frame="196" />
+      <SpotsInFrame frame="197" />
+      <SpotsInFrame frame="198" />
+      <SpotsInFrame frame="199" />
+      <SpotsInFrame frame="200" />
+      <SpotsInFrame frame="201" />
+      <SpotsInFrame frame="202" />
+      <SpotsInFrame frame="203" />
+      <SpotsInFrame frame="204" />
+      <SpotsInFrame frame="205" />
+      <SpotsInFrame frame="206" />
+      <SpotsInFrame frame="207" />
+      <SpotsInFrame frame="208" />
+      <SpotsInFrame frame="209" />
+      <SpotsInFrame frame="210" />
+      <SpotsInFrame frame="211" />
+      <SpotsInFrame frame="212" />
+      <SpotsInFrame frame="213" />
+      <SpotsInFrame frame="214" />
+      <SpotsInFrame frame="215" />
+      <SpotsInFrame frame="216" />
+      <SpotsInFrame frame="217" />
+      <SpotsInFrame frame="218" />
+      <SpotsInFrame frame="219" />
+      <SpotsInFrame frame="220" />
+      <SpotsInFrame frame="221" />
+      <SpotsInFrame frame="222" />
+      <SpotsInFrame frame="223" />
+      <SpotsInFrame frame="224" />
+      <SpotsInFrame frame="225" />
+      <SpotsInFrame frame="226" />
+      <SpotsInFrame frame="227" />
+      <SpotsInFrame frame="228" />
+      <SpotsInFrame frame="229" />
+      <SpotsInFrame frame="230" />
+      <SpotsInFrame frame="231" />
+      <SpotsInFrame frame="232" />
+      <SpotsInFrame frame="233" />
+      <SpotsInFrame frame="234" />
+      <SpotsInFrame frame="235" />
+      <SpotsInFrame frame="236" />
+      <SpotsInFrame frame="237" />
+      <SpotsInFrame frame="238" />
+      <SpotsInFrame frame="239" />
+      <SpotsInFrame frame="240" />
+      <SpotsInFrame frame="241" />
+      <SpotsInFrame frame="242" />
+      <SpotsInFrame frame="243" />
+      <SpotsInFrame frame="244" />
+      <SpotsInFrame frame="245" />
+      <SpotsInFrame frame="246" />
+      <SpotsInFrame frame="247" />
+      <SpotsInFrame frame="248" />
+      <SpotsInFrame frame="249" />
+      <SpotsInFrame frame="250" />
+      <SpotsInFrame frame="251" />
+      <SpotsInFrame frame="252" />
+      <SpotsInFrame frame="253" />
+      <SpotsInFrame frame="254" />
+      <SpotsInFrame frame="255" />
+      <SpotsInFrame frame="256" />
+      <SpotsInFrame frame="257" />
+      <SpotsInFrame frame="258" />
+      <SpotsInFrame frame="259" />
+      <SpotsInFrame frame="260" />
+      <SpotsInFrame frame="261" />
+      <SpotsInFrame frame="262" />
+      <SpotsInFrame frame="263" />
+      <SpotsInFrame frame="264" />
+      <SpotsInFrame frame="265" />
+      <SpotsInFrame frame="266" />
+      <SpotsInFrame frame="267" />
+      <SpotsInFrame frame="268" />
+      <SpotsInFrame frame="269" />
+      <SpotsInFrame frame="270" />
+      <SpotsInFrame frame="271" />
+      <SpotsInFrame frame="272" />
+      <SpotsInFrame frame="273" />
+      <SpotsInFrame frame="274" />
+      <SpotsInFrame frame="275" />
+      <SpotsInFrame frame="276" />
+      <SpotsInFrame frame="277" />
+      <SpotsInFrame frame="278" />
+      <SpotsInFrame frame="279" />
+      <SpotsInFrame frame="280" />
+      <SpotsInFrame frame="281" />
+      <SpotsInFrame frame="282" />
+      <SpotsInFrame frame="283" />
+      <SpotsInFrame frame="284" />
+      <SpotsInFrame frame="285" />
+      <SpotsInFrame frame="286" />
+      <SpotsInFrame frame="287" />
+      <SpotsInFrame frame="288" />
+      <SpotsInFrame frame="289" />
+      <SpotsInFrame frame="290" />
+      <SpotsInFrame frame="291" />
+      <SpotsInFrame frame="292" />
+      <SpotsInFrame frame="293" />
+      <SpotsInFrame frame="294" />
+      <SpotsInFrame frame="295" />
+      <SpotsInFrame frame="296" />
+      <SpotsInFrame frame="297" />
+      <SpotsInFrame frame="298" />
+      <SpotsInFrame frame="299" />
+      <SpotsInFrame frame="300" />
+      <SpotsInFrame frame="301" />
+      <SpotsInFrame frame="302" />
+      <SpotsInFrame frame="303" />
+      <SpotsInFrame frame="304" />
+      <SpotsInFrame frame="305" />
+      <SpotsInFrame frame="306" />
+      <SpotsInFrame frame="307" />
+      <SpotsInFrame frame="308" />
+      <SpotsInFrame frame="309" />
+      <SpotsInFrame frame="310" />
+      <SpotsInFrame frame="311" />
+      <SpotsInFrame frame="312" />
+      <SpotsInFrame frame="313" />
+      <SpotsInFrame frame="314" />
+      <SpotsInFrame frame="315" />
+      <SpotsInFrame frame="316" />
+      <SpotsInFrame frame="317" />
+      <SpotsInFrame frame="318" />
+      <SpotsInFrame frame="319" />
+      <SpotsInFrame frame="320">
+        <Spot FRAME="320" ID="1668" POSITION_T="320.0" POSITION_X="49.24473640416" POSITION_Y="51.907814350324756" POSITION_Z="64.18574949599984" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1668" />
+        <Spot FRAME="320" ID="1669" POSITION_T="320.0" POSITION_X="56.90306825500471" POSITION_Y="39.71647251276446" POSITION_Z="70.36017260851712" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1669" />
+        <Spot FRAME="320" ID="1670" POSITION_T="320.0" POSITION_X="30.71540058056177" POSITION_Y="46.88395938383236" POSITION_Z="77.37684957536665" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1670" />
+        <Spot FRAME="320" ID="1671" POSITION_T="320.0" POSITION_X="36.491122976460645" POSITION_Y="35.80875381327684" POSITION_Z="61.897171988223974" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1671" />
+        <Spot FRAME="320" ID="1672" POSITION_T="320.0" POSITION_X="46.00485504032302" POSITION_Y="45.96266923773042" POSITION_Z="59.626824964735185" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1672" />
+        <Spot FRAME="320" ID="1673" POSITION_T="320.0" POSITION_X="46.12106964687569" POSITION_Y="56.227549024514225" POSITION_Z="68.30615269368045" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1673" />
+        <Spot FRAME="320" ID="1674" POSITION_T="320.0" POSITION_X="41.549785396648" POSITION_Y="30.699782212091282" POSITION_Z="70.72211967298193" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1674" />
+        <Spot FRAME="320" ID="1675" POSITION_T="320.0" POSITION_X="47.12130730962248" POSITION_Y="50.703268723100024" POSITION_Z="84.89774110130259" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1675" />
+        <Spot FRAME="320" ID="1676" POSITION_T="320.0" POSITION_X="39.17302994701213" POSITION_Y="43.373673427742446" POSITION_Z="83.88081765135789" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1676" />
+        <Spot FRAME="320" ID="1677" POSITION_T="320.0" POSITION_X="33.586471321993336" POSITION_Y="35.2779385341475" POSITION_Z="68.60670140872547" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1677" />
+        <Spot FRAME="320" ID="1678" POSITION_T="320.0" POSITION_X="48.73189090649881" POSITION_Y="32.24291666555487" POSITION_Z="79.89321105772403" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1678" />
+        <Spot FRAME="320" ID="1679" POSITION_T="320.0" POSITION_X="56.90971887879725" POSITION_Y="40.74531600210294" POSITION_Z="77.71402787897708" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1679" />
+        <Spot FRAME="320" ID="1680" POSITION_T="320.0" POSITION_X="51.79624700091831" POSITION_Y="34.15856163038983" POSITION_Z="68.08402160683964" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1680" />
+        <Spot FRAME="320" ID="1681" POSITION_T="320.0" POSITION_X="54.18169967256834" POSITION_Y="43.37989807366042" POSITION_Z="64.10030459223152" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1681" />
+        <Spot FRAME="320" ID="1682" POSITION_T="320.0" POSITION_X="45.46625800624296" POSITION_Y="34.3124246801256" POSITION_Z="84.8318364564846" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1682" />
+        <Spot FRAME="320" ID="1683" POSITION_T="320.0" POSITION_X="39.919212811301136" POSITION_Y="41.56620916183921" POSITION_Z="59.13651959647599" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1683" />
+        <Spot FRAME="320" ID="1684" POSITION_T="320.0" POSITION_X="33.821670552631176" POSITION_Y="45.10776045625029" POSITION_Z="66.54686119586586" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1684" />
+        <Spot FRAME="320" ID="1685" POSITION_T="320.0" POSITION_X="30.557773310101943" POSITION_Y="38.56029739910092" POSITION_Z="74.2908753680598" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1685" />
+        <Spot FRAME="320" ID="1686" POSITION_T="320.0" POSITION_X="40.780015472959334" POSITION_Y="53.66626614368749" POSITION_Z="76.29927268822473" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1686" />
+        <Spot FRAME="320" ID="1687" POSITION_T="320.0" POSITION_X="36.459758658365764" POSITION_Y="31.930747184783396" POSITION_Z="78.28369462638534" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1687" />
+        <Spot FRAME="320" ID="1688" POSITION_T="320.0" POSITION_X="54.671412322905816" POSITION_Y="49.86572543441767" POSITION_Z="70.32804178014037" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1688" />
+        <Spot FRAME="320" ID="1689" POSITION_T="320.0" POSITION_X="48.22753765694844" POSITION_Y="37.51410860043982" POSITION_Z="61.33545111378728" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1689" />
+        <Spot FRAME="320" ID="1690" POSITION_T="320.0" POSITION_X="45.41234517544397" POSITION_Y="40.681094441847954" POSITION_Z="88.92631584521415" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1690" />
+        <Spot FRAME="320" ID="1691" POSITION_T="320.0" POSITION_X="53.84815211709207" POSITION_Y="47.339491337440315" POSITION_Z="81.84252515992064" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1691" />
+        <Spot FRAME="320" ID="1692" POSITION_T="320.0" POSITION_X="35.538758895924744" POSITION_Y="35.69556990128665" POSITION_Z="84.61004002796044" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1692" />
+      </SpotsInFrame>
+      <SpotsInFrame frame="321">
+        <Spot FRAME="321" ID="1693" POSITION_T="321.0" POSITION_X="48.30061565739674" POSITION_Y="51.63869250742349" POSITION_Z="63.369364254247024" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1693" />
+        <Spot FRAME="321" ID="1694" POSITION_T="321.0" POSITION_X="57.03741363340637" POSITION_Y="38.84665514756137" POSITION_Z="70.80339533440741" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1694" />
+        <Spot FRAME="321" ID="1695" POSITION_T="321.0" POSITION_X="30.960168589515817" POSITION_Y="48.23669290801989" POSITION_Z="77.02033137103999" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1695" />
+        <Spot FRAME="321" ID="1696" POSITION_T="321.0" POSITION_X="35.21912308342428" POSITION_Y="35.749566058781106" POSITION_Z="62.77535930051626" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1696" />
+        <Spot FRAME="321" ID="1697" POSITION_T="321.0" POSITION_X="45.44456817458936" POSITION_Y="45.432519525435836" POSITION_Z="59.05059067826286" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1697" />
+        <Spot FRAME="321" ID="1698" POSITION_T="321.0" POSITION_X="46.50995676671202" POSITION_Y="56.07447012936788" POSITION_Z="69.20281192191906" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1698" />
+        <Spot FRAME="321" ID="1699" POSITION_T="321.0" POSITION_X="41.218415971721996" POSITION_Y="31.123905950239763" POSITION_Z="67.70557945029206" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1699" />
+        <Spot FRAME="321" ID="1700" POSITION_T="321.0" POSITION_X="38.6103200452344" POSITION_Y="44.07280829957943" POSITION_Z="86.67735713870584" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1700" />
+        <Spot FRAME="321" ID="1701" POSITION_T="321.0" POSITION_X="32.1766788985801" POSITION_Y="36.20010733209338" POSITION_Z="70.32291077433113" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1701" />
+        <Spot FRAME="321" ID="1702" POSITION_T="321.0" POSITION_X="45.26518490143935" POSITION_Y="49.99943349772124" POSITION_Z="86.27635487788328" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1702" />
+        <Spot FRAME="321" ID="1703" POSITION_T="321.0" POSITION_X="56.83938014107504" POSITION_Y="41.6936247029951" POSITION_Z="78.66739361330025" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1703" />
+        <Spot FRAME="321" ID="1704" POSITION_T="321.0" POSITION_X="52.14720841248303" POSITION_Y="33.305244547112665" POSITION_Z="67.19677215806924" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1704" />
+        <Spot FRAME="321" ID="1705" POSITION_T="321.0" POSITION_X="53.55479226411507" POSITION_Y="42.81724436568097" POSITION_Z="63.84148019518975" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1705" />
+        <Spot FRAME="321" ID="1706" POSITION_T="321.0" POSITION_X="44.81958009353516" POSITION_Y="33.28481441944411" POSITION_Z="83.30044342555192" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1706" />
+        <Spot FRAME="321" ID="1707" POSITION_T="321.0" POSITION_X="39.55236515876067" POSITION_Y="40.826423203722484" POSITION_Z="58.88934166954496" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1707" />
+        <Spot FRAME="321" ID="1708" POSITION_T="321.0" POSITION_X="35.72393578141013" POSITION_Y="48.45255501695086" POSITION_Z="65.93661637780548" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1708" />
+        <Spot FRAME="321" ID="1709" POSITION_T="321.0" POSITION_X="30.076738444433435" POSITION_Y="38.91663615659184" POSITION_Z="75.21106642176547" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1709" />
+        <Spot FRAME="321" ID="1710" POSITION_T="321.0" POSITION_X="41.689243888978176" POSITION_Y="53.49373033937351" POSITION_Z="79.0370503375133" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1710" />
+        <Spot FRAME="321" ID="1711" POSITION_T="321.0" POSITION_X="47.67680984066558" POSITION_Y="30.75396511785667" POSITION_Z="76.20686355167446" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1711" />
+        <Spot FRAME="321" ID="1712" POSITION_T="321.0" POSITION_X="37.182914713513156" POSITION_Y="32.35448962269133" POSITION_Z="77.36385257301741" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1712" />
+        <Spot FRAME="321" ID="1713" POSITION_T="321.0" POSITION_X="55.1678103620206" POSITION_Y="48.1919748836268" POSITION_Z="69.7218413632827" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1713" />
+        <Spot FRAME="321" ID="1714" POSITION_T="321.0" POSITION_X="47.56377149608766" POSITION_Y="36.95806752127723" POSITION_Z="60.4309973050075" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1714" />
+        <Spot FRAME="321" ID="1715" POSITION_T="321.0" POSITION_X="46.92333904502889" POSITION_Y="40.39786487779421" POSITION_Z="87.72667014160918" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1715" />
+        <Spot FRAME="321" ID="1716" POSITION_T="321.0" POSITION_X="53.02646612839185" POSITION_Y="49.006321586121274" POSITION_Z="82.2710610674317" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1716" />
+        <Spot FRAME="321" ID="1717" POSITION_T="321.0" POSITION_X="35.99249721558559" POSITION_Y="35.96335188108675" POSITION_Z="84.47191858718342" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1717" />
+      </SpotsInFrame>
+      <SpotsInFrame frame="322">
+        <Spot FRAME="322" ID="1718" POSITION_T="322.0" POSITION_X="48.46173777187163" POSITION_Y="50.94322371995068" POSITION_Z="63.62019441931587" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1718" />
+        <Spot FRAME="322" ID="1719" POSITION_T="322.0" POSITION_X="55.88969996325215" POSITION_Y="39.32372212173952" POSITION_Z="69.87362805444383" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1719" />
+        <Spot FRAME="322" ID="1720" POSITION_T="322.0" POSITION_X="34.99381691044441" POSITION_Y="49.588275871574595" POSITION_Z="76.88408891123363" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1720" />
+        <Spot FRAME="322" ID="1721" POSITION_T="322.0" POSITION_X="35.50994090727053" POSITION_Y="35.66512079466035" POSITION_Z="62.05435801717019" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1721" />
+        <Spot FRAME="322" ID="1722" POSITION_T="322.0" POSITION_X="44.438956187640514" POSITION_Y="44.693532404226524" POSITION_Z="58.11988684314415" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1722" />
+        <Spot FRAME="322" ID="1723" POSITION_T="322.0" POSITION_X="35.25234720942175" POSITION_Y="47.38538865496267" POSITION_Z="64.61594446867323" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1723" />
+        <Spot FRAME="322" ID="1724" POSITION_T="322.0" POSITION_X="46.80789274319863" POSITION_Y="56.533491679365675" POSITION_Z="68.01454912366657" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1724" />
+        <Spot FRAME="322" ID="1725" POSITION_T="322.0" POSITION_X="38.64897523214439" POSITION_Y="30.586219753434488" POSITION_Z="69.86510208093688" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1725" />
+        <Spot FRAME="322" ID="1726" POSITION_T="322.0" POSITION_X="37.366972774792636" POSITION_Y="42.59110460867245" POSITION_Z="86.38140316560761" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1726" />
+        <Spot FRAME="322" ID="1727" POSITION_T="322.0" POSITION_X="32.552764886935535" POSITION_Y="36.70710903701703" POSITION_Z="70.70930756755244" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1727" />
+        <Spot FRAME="322" ID="1728" POSITION_T="322.0" POSITION_X="46.6535685646942" POSITION_Y="50.59957287402484" POSITION_Z="85.41397285634987" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1728" />
+        <Spot FRAME="322" ID="1729" POSITION_T="322.0" POSITION_X="56.13599276385288" POSITION_Y="40.990237325772945" POSITION_Z="78.66739361330025" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1729" />
+        <Spot FRAME="322" ID="1730" POSITION_T="322.0" POSITION_X="49.90652892931018" POSITION_Y="32.11149580510279" POSITION_Z="68.21616994241188" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1730" />
+        <Spot FRAME="322" ID="1731" POSITION_T="322.0" POSITION_X="52.63203060252977" POSITION_Y="42.884667781943996" POSITION_Z="62.63492749250812" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1731" />
+        <Spot FRAME="322" ID="1732" POSITION_T="322.0" POSITION_X="45.69855193914446" POSITION_Y="54.12677897887345" POSITION_Z="79.0370503375133" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1732" />
+        <Spot FRAME="322" ID="1733" POSITION_T="322.0" POSITION_X="44.38345023120929" POSITION_Y="32.6569262039272" POSITION_Z="83.23614032058727" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1733" />
+        <Spot FRAME="322" ID="1734" POSITION_T="322.0" POSITION_X="38.11786157306523" POSITION_Y="40.950788674083036" POSITION_Z="58.25581592817028" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1734" />
+        <Spot FRAME="322" ID="1735" POSITION_T="322.0" POSITION_X="29.985116374242914" POSITION_Y="41.64943754668156" POSITION_Z="75.17367443324676" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1735" />
+        <Spot FRAME="322" ID="1736" POSITION_T="322.0" POSITION_X="49.28464183499244" POSITION_Y="31.727883883183285" POSITION_Z="77.11817533475227" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1736" />
+        <Spot FRAME="322" ID="1737" POSITION_T="322.0" POSITION_X="36.47468598413661" POSITION_Y="33.39476904898286" POSITION_Z="78.31459993301593" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1737" />
+        <Spot FRAME="322" ID="1738" POSITION_T="322.0" POSITION_X="55.47596503927665" POSITION_Y="48.535075510306434" POSITION_Z="69.35780132912268" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1738" />
+        <Spot FRAME="322" ID="1739" POSITION_T="322.0" POSITION_X="45.959177540436556" POSITION_Y="34.34421751981948" POSITION_Z="61.60197488905555" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1739" />
+        <Spot FRAME="322" ID="1740" POSITION_T="322.0" POSITION_X="46.29175220928654" POSITION_Y="39.60417204745176" POSITION_Z="87.91441023901008" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1740" />
+        <Spot FRAME="322" ID="1741" POSITION_T="322.0" POSITION_X="52.51484637671632" POSITION_Y="45.385512081022526" POSITION_Z="84.14261540899477" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1741" />
+        <Spot FRAME="322" ID="1742" POSITION_T="322.0" POSITION_X="36.16679801964081" POSITION_Y="34.14148757357991" POSITION_Z="84.28125762519838" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1742" />
+      </SpotsInFrame>
+      <SpotsInFrame frame="323">
+        <Spot FRAME="323" ID="1743" POSITION_T="323.0" POSITION_X="48.975645388775725" POSITION_Y="53.407503845472185" POSITION_Z="63.77415128124023" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1743" />
+        <Spot FRAME="323" ID="1744" POSITION_T="323.0" POSITION_X="54.27440864288668" POSITION_Y="39.12625975362976" POSITION_Z="67.40115040859776" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1744" />
+        <Spot FRAME="323" ID="1745" POSITION_T="323.0" POSITION_X="34.42243769161088" POSITION_Y="36.227207886964095" POSITION_Z="62.06808516896501" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1745" />
+        <Spot FRAME="323" ID="1746" POSITION_T="323.0" POSITION_X="44.02116472476441" POSITION_Y="44.48103460379613" POSITION_Z="57.35942750210169" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1746" />
+        <Spot FRAME="323" ID="1747" POSITION_T="323.0" POSITION_X="36.00124610851571" POSITION_Y="49.146780675382495" POSITION_Z="65.07608785818081" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1747" />
+        <Spot FRAME="323" ID="1748" POSITION_T="323.0" POSITION_X="46.013390281132466" POSITION_Y="57.42800412393983" POSITION_Z="68.48131307231293" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1748" />
+        <Spot FRAME="323" ID="1749" POSITION_T="323.0" POSITION_X="38.97733682581206" POSITION_Y="30.963313926108434" POSITION_Z="68.77926326988101" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1749" />
+        <Spot FRAME="323" ID="1750" POSITION_T="323.0" POSITION_X="38.3613462335756" POSITION_Y="41.61593916645176" POSITION_Z="86.38553408923796" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1750" />
+        <Spot FRAME="323" ID="1751" POSITION_T="323.0" POSITION_X="32.01820685492984" POSITION_Y="37.895187478467285" POSITION_Z="70.21689862506481" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1751" />
+        <Spot FRAME="323" ID="1752" POSITION_T="323.0" POSITION_X="45.42288417050823" POSITION_Y="48.777057715711976" POSITION_Z="86.88281931102878" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1752" />
+        <Spot FRAME="323" ID="1753" POSITION_T="323.0" POSITION_X="55.76756829436415" POSITION_Y="40.52649821640144" POSITION_Z="77.6461295078546" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1753" />
+        <Spot FRAME="323" ID="1754" POSITION_T="323.0" POSITION_X="49.03415499904043" POSITION_Y="31.492438968480958" POSITION_Z="67.68469645287985" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1754" />
+        <Spot FRAME="323" ID="1755" POSITION_T="323.0" POSITION_X="34.9234781727222" POSITION_Y="42.82897602814124" POSITION_Z="77.58322378307062" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1755" />
+        <Spot FRAME="323" ID="1756" POSITION_T="323.0" POSITION_X="38.37007632111076" POSITION_Y="53.94927761035195" POSITION_Z="76.88408891123363" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1756" />
+        <Spot FRAME="323" ID="1757" POSITION_T="323.0" POSITION_X="52.549979246550855" POSITION_Y="45.9927596518417" POSITION_Z="61.98315820589032" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1757" />
+        <Spot FRAME="323" ID="1758" POSITION_T="323.0" POSITION_X="50.38575982657911" POSITION_Y="51.23570432862899" POSITION_Z="78.06205242132334" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1758" />
+        <Spot FRAME="323" ID="1759" POSITION_T="323.0" POSITION_X="45.647037789387575" POSITION_Y="31.953650769364746" POSITION_Z="82.57077528363547" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1759" />
+        <Spot FRAME="323" ID="1760" POSITION_T="323.0" POSITION_X="37.4606968295469" POSITION_Y="40.98019056507034" POSITION_Z="58.146730265762564" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1760" />
+        <Spot FRAME="323" ID="1761" POSITION_T="323.0" POSITION_X="29.535544856482755" POSITION_Y="41.01558718387646" POSITION_Z="77.03203696967184" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1761" />
+        <Spot FRAME="323" ID="1762" POSITION_T="323.0" POSITION_X="52.64100972058773" POSITION_Y="32.60894695980368" POSITION_Z="76.8130609766674" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1762" />
+        <Spot FRAME="323" ID="1763" POSITION_T="323.0" POSITION_X="37.7476202994544" POSITION_Y="31.703258572904065" POSITION_Z="76.20772217319595" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1763" />
+        <Spot FRAME="323" ID="1764" POSITION_T="323.0" POSITION_X="55.52148108778108" POSITION_Y="49.542293612253786" POSITION_Z="68.40922306718457" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1764" />
+        <Spot FRAME="323" ID="1765" POSITION_T="323.0" POSITION_X="45.60776015045242" POSITION_Y="35.86635938601116" POSITION_Z="60.58519953272307" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1765" />
+        <Spot FRAME="323" ID="1766" POSITION_T="323.0" POSITION_X="47.06298213515239" POSITION_Y="39.7499462946064" POSITION_Z="88.29275217948981" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1766" />
+        <Spot FRAME="323" ID="1767" POSITION_T="323.0" POSITION_X="52.79007141463122" POSITION_Y="41.84955905833697" POSITION_Z="84.07728611098315" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1767" />
+        <Spot FRAME="323" ID="1768" POSITION_T="323.0" POSITION_X="37.43210977469589" POSITION_Y="33.36091087260063" POSITION_Z="83.83421538932338" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1768" />
+      </SpotsInFrame>
+      <SpotsInFrame frame="324">
+        <Spot FRAME="324" ID="1792" POSITION_T="324.0" POSITION_X="43.68665192773432" POSITION_Y="35.89108854715692" POSITION_Z="60.78750177300196" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1792" />
+        <Spot FRAME="324" ID="1793" POSITION_T="324.0" POSITION_X="46.669798745556854" POSITION_Y="36.58533943731401" POSITION_Z="87.42705579900594" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1793" />
+        <Spot FRAME="324" ID="1794" POSITION_T="324.0" POSITION_X="52.442250671178726" POSITION_Y="42.01246792474949" POSITION_Z="85.08996207216367" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1794" />
+        <Spot FRAME="324" ID="1769" POSITION_T="324.0" POSITION_X="37.98948268473701" POSITION_Y="32.320022351276855" POSITION_Z="84.18071000087585" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1769" />
+        <Spot FRAME="324" ID="1770" POSITION_T="324.0" POSITION_X="47.44275584140765" POSITION_Y="54.153421532739095" POSITION_Z="62.84611820391456" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1770" />
+        <Spot FRAME="324" ID="1771" POSITION_T="324.0" POSITION_X="54.8017283871701" POSITION_Y="40.801854989061944" POSITION_Z="66.43083831840333" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1771" />
+        <Spot FRAME="324" ID="1772" POSITION_T="324.0" POSITION_X="33.16817545268635" POSITION_Y="38.132766107529804" POSITION_Z="63.58656291150672" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1772" />
+        <Spot FRAME="324" ID="1773" POSITION_T="324.0" POSITION_X="36.13703847796585" POSITION_Y="50.964108929052976" POSITION_Z="65.59637007045876" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1773" />
+        <Spot FRAME="324" ID="1774" POSITION_T="324.0" POSITION_X="44.58282761332627" POSITION_Y="57.888732001220895" POSITION_Z="68.65619687697904" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1774" />
+        <Spot FRAME="324" ID="1775" POSITION_T="324.0" POSITION_X="42.17280021766174" POSITION_Y="30.870088402053277" POSITION_Z="67.99299335138362" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1775" />
+        <Spot FRAME="324" ID="1776" POSITION_T="324.0" POSITION_X="44.95347864081443" POSITION_Y="45.33233839597905" POSITION_Z="57.559688254726616" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1776" />
+        <Spot FRAME="324" ID="1777" POSITION_T="324.0" POSITION_X="38.51285941925517" POSITION_Y="41.13737754758062" POSITION_Z="86.59159672879129" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1777" />
+        <Spot FRAME="324" ID="1778" POSITION_T="324.0" POSITION_X="31.92767059401902" POSITION_Y="38.87657434634012" POSITION_Z="70.6824886442419" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1778" />
+        <Spot FRAME="324" ID="1779" POSITION_T="324.0" POSITION_X="43.771127526834725" POSITION_Y="47.14276558076711" POSITION_Z="87.1561059988597" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1779" />
+        <Spot FRAME="324" ID="1780" POSITION_T="324.0" POSITION_X="56.85679602947657" POSITION_Y="42.36226050476807" POSITION_Z="76.23718294366302" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1780" />
+        <Spot FRAME="324" ID="1781" POSITION_T="324.0" POSITION_X="51.08719262709697" POSITION_Y="32.76368471335559" POSITION_Z="67.3421530822257" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1781" />
+        <Spot FRAME="324" ID="1782" POSITION_T="324.0" POSITION_X="38.79210874744405" POSITION_Y="53.105212757685365" POSITION_Z="76.88408891123363" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1782" />
+        <Spot FRAME="324" ID="1783" POSITION_T="324.0" POSITION_X="53.014855704896554" POSITION_Y="48.7323361738155" POSITION_Z="62.657165760476225" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1783" />
+        <Spot FRAME="324" ID="1784" POSITION_T="324.0" POSITION_X="50.59013340455199" POSITION_Y="51.41804148395196" POSITION_Z="78.66398606711832" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1784" />
+        <Spot FRAME="324" ID="1785" POSITION_T="324.0" POSITION_X="45.99322807047633" POSITION_Y="30.392280949798227" POSITION_Z="81.10742492691695" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1785" />
+        <Spot FRAME="324" ID="1786" POSITION_T="324.0" POSITION_X="36.68194661577758" POSITION_Y="40.3671202078637" POSITION_Z="79.25493265191992" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1786" />
+        <Spot FRAME="324" ID="1787" POSITION_T="324.0" POSITION_X="37.39264723761304" POSITION_Y="41.74608736539772" POSITION_Z="58.87502796704599" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1787" />
+        <Spot FRAME="324" ID="1788" POSITION_T="324.0" POSITION_X="30.987446477297567" POSITION_Y="42.88235010073878" POSITION_Z="75.79217714938204" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1788" />
+        <Spot FRAME="324" ID="1789" POSITION_T="324.0" POSITION_X="54.60509115535879" POSITION_Y="34.88045288148004" POSITION_Z="76.89909869173565" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1789" />
+        <Spot FRAME="324" ID="1790" POSITION_T="324.0" POSITION_X="37.824495064825236" POSITION_Y="30.795727557894303" POSITION_Z="75.91091542701373" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1790" />
+        <Spot FRAME="324" ID="1791" POSITION_T="324.0" POSITION_X="55.156977614875395" POSITION_Y="51.2245132724435" POSITION_Z="69.1854508055723" QUALITY="-1.0" RADIUS="3" VISIBILITY="1" name="1791" />
+      </SpotsInFrame>
+      <SpotsInFrame frame="325" />
+      <SpotsInFrame frame="326" />
+      <SpotsInFrame frame="327" />
+      <SpotsInFrame frame="328" />
+      <SpotsInFrame frame="329" />
+      <SpotsInFrame frame="330" />
+      <SpotsInFrame frame="331" />
+      <SpotsInFrame frame="332" />
+      <SpotsInFrame frame="333" />
+      <SpotsInFrame frame="334" />
+      <SpotsInFrame frame="335" />
+      <SpotsInFrame frame="336" />
+      <SpotsInFrame frame="337" />
+      <SpotsInFrame frame="338" />
+      <SpotsInFrame frame="339" />
+      <SpotsInFrame frame="340" />
+      <SpotsInFrame frame="341" />
+      <SpotsInFrame frame="342" />
+      <SpotsInFrame frame="343" />
+      <SpotsInFrame frame="344" />
+      <SpotsInFrame frame="345" />
+      <SpotsInFrame frame="346" />
+      <SpotsInFrame frame="347" />
+      <SpotsInFrame frame="348" />
+      <SpotsInFrame frame="349" />
+      <SpotsInFrame frame="350" />
+      <SpotsInFrame frame="351" />
+      <SpotsInFrame frame="352" />
+      <SpotsInFrame frame="353" />
+      <SpotsInFrame frame="354" />
+      <SpotsInFrame frame="355" />
+      <SpotsInFrame frame="356" />
+      <SpotsInFrame frame="357" />
+      <SpotsInFrame frame="358" />
+      <SpotsInFrame frame="359" />
+      <SpotsInFrame frame="360" />
+      <SpotsInFrame frame="361" />
+      <SpotsInFrame frame="362" />
+      <SpotsInFrame frame="363" />
+      <SpotsInFrame frame="364" />
+      <SpotsInFrame frame="365" />
+      <SpotsInFrame frame="366" />
+      <SpotsInFrame frame="367" />
+      <SpotsInFrame frame="368" />
+      <SpotsInFrame frame="369" />
+      <SpotsInFrame frame="370" />
+      <SpotsInFrame frame="371" />
+      <SpotsInFrame frame="372" />
+      <SpotsInFrame frame="373" />
+      <SpotsInFrame frame="374" />
+      <SpotsInFrame frame="375" />
+      <SpotsInFrame frame="376" />
+      <SpotsInFrame frame="377" />
+      <SpotsInFrame frame="378" />
+      <SpotsInFrame frame="379" />
+      <SpotsInFrame frame="380" />
+      <SpotsInFrame frame="381" />
+      <SpotsInFrame frame="382" />
+      <SpotsInFrame frame="383" />
+      <SpotsInFrame frame="384" />
+      <SpotsInFrame frame="385" />
+      <SpotsInFrame frame="386" />
+      <SpotsInFrame frame="387" />
+      <SpotsInFrame frame="388" />
+      <SpotsInFrame frame="389" />
+      <SpotsInFrame frame="390" />
+      <SpotsInFrame frame="391" />
+      <SpotsInFrame frame="392" />
+      <SpotsInFrame frame="393" />
+      <SpotsInFrame frame="394" />
+      <SpotsInFrame frame="395" />
+      <SpotsInFrame frame="396" />
+      <SpotsInFrame frame="397" />
+      <SpotsInFrame frame="398" />
+      <SpotsInFrame frame="399" />
+      <SpotsInFrame frame="400" />
+      <SpotsInFrame frame="401" />
+      <SpotsInFrame frame="402" />
+      <SpotsInFrame frame="403" />
+      <SpotsInFrame frame="404" />
+      <SpotsInFrame frame="405" />
+      <SpotsInFrame frame="406" />
+      <SpotsInFrame frame="407" />
+      <SpotsInFrame frame="408" />
+      <SpotsInFrame frame="409" />
+      <SpotsInFrame frame="410" />
+      <SpotsInFrame frame="411" />
+      <SpotsInFrame frame="412" />
+      <SpotsInFrame frame="413" />
+      <SpotsInFrame frame="414" />
+      <SpotsInFrame frame="415" />
+      <SpotsInFrame frame="416" />
+      <SpotsInFrame frame="417" />
+      <SpotsInFrame frame="418" />
+      <SpotsInFrame frame="419" />
+      <SpotsInFrame frame="420" />
+      <SpotsInFrame frame="421" />
+      <SpotsInFrame frame="422" />
+      <SpotsInFrame frame="423" />
+      <SpotsInFrame frame="424" />
+      <SpotsInFrame frame="425" />
+      <SpotsInFrame frame="426" />
+      <SpotsInFrame frame="427" />
+      <SpotsInFrame frame="428" />
+      <SpotsInFrame frame="429" />
+      <SpotsInFrame frame="430" />
+      <SpotsInFrame frame="431" />
+      <SpotsInFrame frame="432" />
+      <SpotsInFrame frame="433" />
+      <SpotsInFrame frame="434" />
+      <SpotsInFrame frame="435" />
+      <SpotsInFrame frame="436" />
+      <SpotsInFrame frame="437" />
+      <SpotsInFrame frame="438" />
+      <SpotsInFrame frame="439" />
+      <SpotsInFrame frame="440" />
+      <SpotsInFrame frame="441" />
+      <SpotsInFrame frame="442" />
+      <SpotsInFrame frame="443" />
+      <SpotsInFrame frame="444" />
+      <SpotsInFrame frame="445" />
+      <SpotsInFrame frame="446" />
+      <SpotsInFrame frame="447" />
+      <SpotsInFrame frame="448" />
+      <SpotsInFrame frame="449" />
+      <SpotsInFrame frame="450" />
+      <SpotsInFrame frame="451" />
+      <SpotsInFrame frame="452" />
+      <SpotsInFrame frame="453" />
+      <SpotsInFrame frame="454" />
+      <SpotsInFrame frame="455" />
+      <SpotsInFrame frame="456" />
+      <SpotsInFrame frame="457" />
+      <SpotsInFrame frame="458" />
+      <SpotsInFrame frame="459" />
+      <SpotsInFrame frame="460" />
+      <SpotsInFrame frame="461" />
+      <SpotsInFrame frame="462" />
+      <SpotsInFrame frame="463" />
+      <SpotsInFrame frame="464" />
+      <SpotsInFrame frame="465" />
+      <SpotsInFrame frame="466" />
+      <SpotsInFrame frame="467" />
+      <SpotsInFrame frame="468" />
+      <SpotsInFrame frame="469" />
+      <SpotsInFrame frame="470" />
+      <SpotsInFrame frame="471" />
+      <SpotsInFrame frame="472" />
+      <SpotsInFrame frame="473" />
+      <SpotsInFrame frame="474" />
+      <SpotsInFrame frame="475" />
+      <SpotsInFrame frame="476" />
+      <SpotsInFrame frame="477" />
+      <SpotsInFrame frame="478" />
+      <SpotsInFrame frame="479" />
+      <SpotsInFrame frame="480" />
+      <SpotsInFrame frame="481" />
+      <SpotsInFrame frame="482" />
+      <SpotsInFrame frame="483" />
+      <SpotsInFrame frame="484" />
+      <SpotsInFrame frame="485" />
+      <SpotsInFrame frame="486" />
+      <SpotsInFrame frame="487" />
+      <SpotsInFrame frame="488" />
+      <SpotsInFrame frame="489" />
+      <SpotsInFrame frame="490" />
+      <SpotsInFrame frame="491" />
+      <SpotsInFrame frame="492" />
+      <SpotsInFrame frame="493" />
+      <SpotsInFrame frame="494" />
+      <SpotsInFrame frame="495" />
+      <SpotsInFrame frame="496" />
+      <SpotsInFrame frame="497" />
+      <SpotsInFrame frame="498" />
+      <SpotsInFrame frame="499" />
+      <SpotsInFrame frame="500" />
+      <SpotsInFrame frame="501" />
+      <SpotsInFrame frame="502" />
+      <SpotsInFrame frame="503" />
+      <SpotsInFrame frame="504" />
+      <SpotsInFrame frame="505" />
+      <SpotsInFrame frame="506" />
+      <SpotsInFrame frame="507" />
+      <SpotsInFrame frame="508" />
+      <SpotsInFrame frame="509" />
+      <SpotsInFrame frame="510" />
+      <SpotsInFrame frame="511" />
+      <SpotsInFrame frame="512" />
+      <SpotsInFrame frame="513" />
+      <SpotsInFrame frame="514" />
+      <SpotsInFrame frame="515" />
+      <SpotsInFrame frame="516" />
+      <SpotsInFrame frame="517" />
+      <SpotsInFrame frame="518" />
+      <SpotsInFrame frame="519" />
+      <SpotsInFrame frame="520" />
+      <SpotsInFrame frame="521" />
+      <SpotsInFrame frame="522" />
+      <SpotsInFrame frame="523" />
+      <SpotsInFrame frame="524" />
+      <SpotsInFrame frame="525" />
+      <SpotsInFrame frame="526" />
+      <SpotsInFrame frame="527" />
+      <SpotsInFrame frame="528" />
+      <SpotsInFrame frame="529" />
+      <SpotsInFrame frame="530" />
+      <SpotsInFrame frame="531" />
+      <SpotsInFrame frame="532" />
+      <SpotsInFrame frame="533" />
+      <SpotsInFrame frame="534" />
+      <SpotsInFrame frame="535" />
+      <SpotsInFrame frame="536" />
+      <SpotsInFrame frame="537" />
+      <SpotsInFrame frame="538" />
+      <SpotsInFrame frame="539" />
+      <SpotsInFrame frame="540" />
+      <SpotsInFrame frame="541" />
+      <SpotsInFrame frame="542" />
+      <SpotsInFrame frame="543" />
+      <SpotsInFrame frame="544" />
+      <SpotsInFrame frame="545" />
+      <SpotsInFrame frame="546" />
+      <SpotsInFrame frame="547" />
+      <SpotsInFrame frame="548" />
+      <SpotsInFrame frame="549" />
+      <SpotsInFrame frame="550" />
+      <SpotsInFrame frame="551" />
+      <SpotsInFrame frame="552" />
+      <SpotsInFrame frame="553" />
+      <SpotsInFrame frame="554" />
+      <SpotsInFrame frame="555" />
+      <SpotsInFrame frame="556" />
+      <SpotsInFrame frame="557" />
+      <SpotsInFrame frame="558" />
+      <SpotsInFrame frame="559" />
+      <SpotsInFrame frame="560" />
+      <SpotsInFrame frame="561" />
+      <SpotsInFrame frame="562" />
+      <SpotsInFrame frame="563" />
+      <SpotsInFrame frame="564" />
+      <SpotsInFrame frame="565" />
+      <SpotsInFrame frame="566" />
+      <SpotsInFrame frame="567" />
+      <SpotsInFrame frame="568" />
+      <SpotsInFrame frame="569" />
+      <SpotsInFrame frame="570" />
+      <SpotsInFrame frame="571" />
+      <SpotsInFrame frame="572" />
+      <SpotsInFrame frame="573" />
+      <SpotsInFrame frame="574" />
+      <SpotsInFrame frame="575" />
+      <SpotsInFrame frame="576" />
+      <SpotsInFrame frame="577" />
+      <SpotsInFrame frame="578" />
+      <SpotsInFrame frame="579" />
+      <SpotsInFrame frame="580" />
+      <SpotsInFrame frame="581" />
+      <SpotsInFrame frame="582" />
+      <SpotsInFrame frame="583" />
+      <SpotsInFrame frame="584" />
+      <SpotsInFrame frame="585" />
+      <SpotsInFrame frame="586" />
+      <SpotsInFrame frame="587" />
+      <SpotsInFrame frame="588" />
+      <SpotsInFrame frame="589" />
+      <SpotsInFrame frame="590" />
+      <SpotsInFrame frame="591" />
+      <SpotsInFrame frame="592" />
+      <SpotsInFrame frame="593" />
+      <SpotsInFrame frame="594" />
+      <SpotsInFrame frame="595" />
+      <SpotsInFrame frame="596" />
+      <SpotsInFrame frame="597" />
+      <SpotsInFrame frame="598" />
+      <SpotsInFrame frame="599" />
+      <SpotsInFrame frame="600" />
+      <SpotsInFrame frame="601" />
+      <SpotsInFrame frame="602" />
+      <SpotsInFrame frame="603" />
+      <SpotsInFrame frame="604" />
+      <SpotsInFrame frame="605" />
+      <SpotsInFrame frame="606" />
+      <SpotsInFrame frame="607" />
+      <SpotsInFrame frame="608" />
+      <SpotsInFrame frame="609" />
+      <SpotsInFrame frame="610" />
+      <SpotsInFrame frame="611" />
+      <SpotsInFrame frame="612" />
+      <SpotsInFrame frame="613" />
+      <SpotsInFrame frame="614" />
+      <SpotsInFrame frame="615" />
+      <SpotsInFrame frame="616" />
+      <SpotsInFrame frame="617" />
+      <SpotsInFrame frame="618" />
+      <SpotsInFrame frame="619" />
+      <SpotsInFrame frame="620" />
+      <SpotsInFrame frame="621" />
+      <SpotsInFrame frame="622" />
+      <SpotsInFrame frame="623" />
+      <SpotsInFrame frame="624" />
+      <SpotsInFrame frame="625" />
+      <SpotsInFrame frame="626" />
+      <SpotsInFrame frame="627" />
+      <SpotsInFrame frame="628" />
+      <SpotsInFrame frame="629" />
+      <SpotsInFrame frame="630" />
+      <SpotsInFrame frame="631" />
+      <SpotsInFrame frame="632" />
+      <SpotsInFrame frame="633" />
+      <SpotsInFrame frame="634" />
+      <SpotsInFrame frame="635" />
+      <SpotsInFrame frame="636" />
+      <SpotsInFrame frame="637" />
+      <SpotsInFrame frame="638" />
+      <SpotsInFrame frame="639" />
+      <SpotsInFrame frame="640" />
+      <SpotsInFrame frame="641" />
+      <SpotsInFrame frame="642" />
+      <SpotsInFrame frame="643" />
+      <SpotsInFrame frame="644" />
+      <SpotsInFrame frame="645" />
+      <SpotsInFrame frame="646" />
+      <SpotsInFrame frame="647" />
+      <SpotsInFrame frame="648" />
+      <SpotsInFrame frame="649" />
+      <SpotsInFrame frame="650" />
+      <SpotsInFrame frame="651" />
+      <SpotsInFrame frame="652" />
+      <SpotsInFrame frame="653" />
+      <SpotsInFrame frame="654" />
+      <SpotsInFrame frame="655" />
+      <SpotsInFrame frame="656" />
+      <SpotsInFrame frame="657" />
+      <SpotsInFrame frame="658" />
+      <SpotsInFrame frame="659" />
+      <SpotsInFrame frame="660" />
+      <SpotsInFrame frame="661" />
+      <SpotsInFrame frame="662" />
+      <SpotsInFrame frame="663" />
+      <SpotsInFrame frame="664" />
+      <SpotsInFrame frame="665" />
+      <SpotsInFrame frame="666" />
+      <SpotsInFrame frame="667" />
+      <SpotsInFrame frame="668" />
+      <SpotsInFrame frame="669" />
+      <SpotsInFrame frame="670" />
+      <SpotsInFrame frame="671" />
+      <SpotsInFrame frame="672" />
+      <SpotsInFrame frame="673" />
+      <SpotsInFrame frame="674" />
+      <SpotsInFrame frame="675" />
+      <SpotsInFrame frame="676" />
+      <SpotsInFrame frame="677" />
+      <SpotsInFrame frame="678" />
+      <SpotsInFrame frame="679" />
+      <SpotsInFrame frame="680" />
+      <SpotsInFrame frame="681" />
+      <SpotsInFrame frame="682" />
+      <SpotsInFrame frame="683" />
+      <SpotsInFrame frame="684" />
+      <SpotsInFrame frame="685" />
+      <SpotsInFrame frame="686" />
+      <SpotsInFrame frame="687" />
+      <SpotsInFrame frame="688" />
+      <SpotsInFrame frame="689" />
+      <SpotsInFrame frame="690" />
+      <SpotsInFrame frame="691" />
+      <SpotsInFrame frame="692" />
+      <SpotsInFrame frame="693" />
+      <SpotsInFrame frame="694" />
+      <SpotsInFrame frame="695" />
+      <SpotsInFrame frame="696" />
+      <SpotsInFrame frame="697" />
+      <SpotsInFrame frame="698" />
+      <SpotsInFrame frame="699" />
+      <SpotsInFrame frame="700" />
+      <SpotsInFrame frame="701" />
+      <SpotsInFrame frame="702" />
+      <SpotsInFrame frame="703" />
+      <SpotsInFrame frame="704" />
+      <SpotsInFrame frame="705" />
+      <SpotsInFrame frame="706" />
+      <SpotsInFrame frame="707" />
+      <SpotsInFrame frame="708" />
+      <SpotsInFrame frame="709" />
+      <SpotsInFrame frame="710" />
+      <SpotsInFrame frame="711" />
+      <SpotsInFrame frame="712" />
+      <SpotsInFrame frame="713" />
+      <SpotsInFrame frame="714" />
+      <SpotsInFrame frame="715" />
+      <SpotsInFrame frame="716" />
+      <SpotsInFrame frame="717" />
+      <SpotsInFrame frame="718" />
+      <SpotsInFrame frame="719" />
+      <SpotsInFrame frame="720" />
+      <SpotsInFrame frame="721" />
+      <SpotsInFrame frame="722" />
+      <SpotsInFrame frame="723" />
+      <SpotsInFrame frame="724" />
+      <SpotsInFrame frame="725" />
+      <SpotsInFrame frame="726" />
+      <SpotsInFrame frame="727" />
+      <SpotsInFrame frame="728" />
+      <SpotsInFrame frame="729" />
+      <SpotsInFrame frame="730" />
+      <SpotsInFrame frame="731" />
+      <SpotsInFrame frame="732" />
+      <SpotsInFrame frame="733" />
+      <SpotsInFrame frame="734" />
+      <SpotsInFrame frame="735" />
+      <SpotsInFrame frame="736" />
+      <SpotsInFrame frame="737" />
+      <SpotsInFrame frame="738" />
+      <SpotsInFrame frame="739" />
+      <SpotsInFrame frame="740" />
+      <SpotsInFrame frame="741" />
+      <SpotsInFrame frame="742" />
+      <SpotsInFrame frame="743" />
+      <SpotsInFrame frame="744" />
+      <SpotsInFrame frame="745" />
+      <SpotsInFrame frame="746" />
+      <SpotsInFrame frame="747" />
+      <SpotsInFrame frame="748" />
+      <SpotsInFrame frame="749" />
+      <SpotsInFrame frame="750" />
+      <SpotsInFrame frame="751" />
+      <SpotsInFrame frame="752" />
+      <SpotsInFrame frame="753" />
+      <SpotsInFrame frame="754" />
+      <SpotsInFrame frame="755" />
+      <SpotsInFrame frame="756" />
+      <SpotsInFrame frame="757" />
+      <SpotsInFrame frame="758" />
+      <SpotsInFrame frame="759" />
+      <SpotsInFrame frame="760" />
+      <SpotsInFrame frame="761" />
+      <SpotsInFrame frame="762" />
+      <SpotsInFrame frame="763" />
+      <SpotsInFrame frame="764" />
+      <SpotsInFrame frame="765" />
+      <SpotsInFrame frame="766" />
+      <SpotsInFrame frame="767" />
+      <SpotsInFrame frame="768" />
+      <SpotsInFrame frame="769" />
+      <SpotsInFrame frame="770" />
+      <SpotsInFrame frame="771" />
+      <SpotsInFrame frame="772" />
+      <SpotsInFrame frame="773" />
+      <SpotsInFrame frame="774" />
+      <SpotsInFrame frame="775" />
+      <SpotsInFrame frame="776" />
+      <SpotsInFrame frame="777" />
+      <SpotsInFrame frame="778" />
+      <SpotsInFrame frame="779" />
+      <SpotsInFrame frame="780" />
+      <SpotsInFrame frame="781" />
+      <SpotsInFrame frame="782" />
+      <SpotsInFrame frame="783" />
+      <SpotsInFrame frame="784" />
+      <SpotsInFrame frame="785" />
+      <SpotsInFrame frame="786" />
+      <SpotsInFrame frame="787" />
+      <SpotsInFrame frame="788" />
+      <SpotsInFrame frame="789" />
+      <SpotsInFrame frame="790" />
+      <SpotsInFrame frame="791" />
+      <SpotsInFrame frame="792" />
+      <SpotsInFrame frame="793" />
+      <SpotsInFrame frame="794" />
+      <SpotsInFrame frame="795" />
+      <SpotsInFrame frame="796" />
+      <SpotsInFrame frame="797" />
+      <SpotsInFrame frame="798" />
+      <SpotsInFrame frame="799" />
+    </AllSpots>
+    <AllTracks>
+      <Track TRACK_ID="1" name="1">
+        <Edge SPOT_SOURCE_ID="1668" SPOT_TARGET_ID="1693" />
+        <Edge SPOT_SOURCE_ID="1669" SPOT_TARGET_ID="1694" />
+        <Edge SPOT_SOURCE_ID="1670" SPOT_TARGET_ID="1695" />
+        <Edge SPOT_SOURCE_ID="1671" SPOT_TARGET_ID="1696" />
+        <Edge SPOT_SOURCE_ID="1672" SPOT_TARGET_ID="1697" />
+        <Edge SPOT_SOURCE_ID="1673" SPOT_TARGET_ID="1698" />
+        <Edge SPOT_SOURCE_ID="1674" SPOT_TARGET_ID="1699" />
+        <Edge SPOT_SOURCE_ID="1675" SPOT_TARGET_ID="1702" />
+        <Edge SPOT_SOURCE_ID="1676" SPOT_TARGET_ID="1700" />
+        <Edge SPOT_SOURCE_ID="1677" SPOT_TARGET_ID="1701" />
+        <Edge SPOT_SOURCE_ID="1678" SPOT_TARGET_ID="1711" />
+        <Edge SPOT_SOURCE_ID="1679" SPOT_TARGET_ID="1703" />
+        <Edge SPOT_SOURCE_ID="1680" SPOT_TARGET_ID="1704" />
+        <Edge SPOT_SOURCE_ID="1681" SPOT_TARGET_ID="1705" />
+        <Edge SPOT_SOURCE_ID="1682" SPOT_TARGET_ID="1706" />
+        <Edge SPOT_SOURCE_ID="1683" SPOT_TARGET_ID="1707" />
+        <Edge SPOT_SOURCE_ID="1684" SPOT_TARGET_ID="1708" />
+        <Edge SPOT_SOURCE_ID="1685" SPOT_TARGET_ID="1709" />
+        <Edge SPOT_SOURCE_ID="1686" SPOT_TARGET_ID="1710" />
+        <Edge SPOT_SOURCE_ID="1687" SPOT_TARGET_ID="1712" />
+        <Edge SPOT_SOURCE_ID="1688" SPOT_TARGET_ID="1713" />
+        <Edge SPOT_SOURCE_ID="1689" SPOT_TARGET_ID="1714" />
+        <Edge SPOT_SOURCE_ID="1690" SPOT_TARGET_ID="1715" />
+        <Edge SPOT_SOURCE_ID="1691" SPOT_TARGET_ID="1716" />
+        <Edge SPOT_SOURCE_ID="1692" SPOT_TARGET_ID="1717" />
+        <Edge SPOT_SOURCE_ID="1693" SPOT_TARGET_ID="1718" />
+        <Edge SPOT_SOURCE_ID="1694" SPOT_TARGET_ID="1719" />
+        <Edge SPOT_SOURCE_ID="1695" SPOT_TARGET_ID="1720" />
+        <Edge SPOT_SOURCE_ID="1696" SPOT_TARGET_ID="1721" />
+        <Edge SPOT_SOURCE_ID="1697" SPOT_TARGET_ID="1722" />
+        <Edge SPOT_SOURCE_ID="1698" SPOT_TARGET_ID="1724" />
+        <Edge SPOT_SOURCE_ID="1699" SPOT_TARGET_ID="1725" />
+        <Edge SPOT_SOURCE_ID="1700" SPOT_TARGET_ID="1726" />
+        <Edge SPOT_SOURCE_ID="1701" SPOT_TARGET_ID="1727" />
+        <Edge SPOT_SOURCE_ID="1702" SPOT_TARGET_ID="1728" />
+        <Edge SPOT_SOURCE_ID="1703" SPOT_TARGET_ID="1729" />
+        <Edge SPOT_SOURCE_ID="1704" SPOT_TARGET_ID="1730" />
+        <Edge SPOT_SOURCE_ID="1705" SPOT_TARGET_ID="1731" />
+        <Edge SPOT_SOURCE_ID="1706" SPOT_TARGET_ID="1733" />
+        <Edge SPOT_SOURCE_ID="1707" SPOT_TARGET_ID="1734" />
+        <Edge SPOT_SOURCE_ID="1708" SPOT_TARGET_ID="1723" />
+        <Edge SPOT_SOURCE_ID="1709" SPOT_TARGET_ID="1735" />
+        <Edge SPOT_SOURCE_ID="1710" SPOT_TARGET_ID="1732" />
+        <Edge SPOT_SOURCE_ID="1711" SPOT_TARGET_ID="1736" />
+        <Edge SPOT_SOURCE_ID="1712" SPOT_TARGET_ID="1737" />
+        <Edge SPOT_SOURCE_ID="1713" SPOT_TARGET_ID="1738" />
+        <Edge SPOT_SOURCE_ID="1714" SPOT_TARGET_ID="1739" />
+        <Edge SPOT_SOURCE_ID="1715" SPOT_TARGET_ID="1740" />
+        <Edge SPOT_SOURCE_ID="1716" SPOT_TARGET_ID="1741" />
+        <Edge SPOT_SOURCE_ID="1717" SPOT_TARGET_ID="1742" />
+        <Edge SPOT_SOURCE_ID="1718" SPOT_TARGET_ID="1743" />
+        <Edge SPOT_SOURCE_ID="1719" SPOT_TARGET_ID="1744" />
+        <Edge SPOT_SOURCE_ID="1720" SPOT_TARGET_ID="1755" />
+        <Edge SPOT_SOURCE_ID="1720" SPOT_TARGET_ID="1756" />
+        <Edge SPOT_SOURCE_ID="1721" SPOT_TARGET_ID="1745" />
+        <Edge SPOT_SOURCE_ID="1722" SPOT_TARGET_ID="1746" />
+        <Edge SPOT_SOURCE_ID="1723" SPOT_TARGET_ID="1747" />
+        <Edge SPOT_SOURCE_ID="1724" SPOT_TARGET_ID="1748" />
+        <Edge SPOT_SOURCE_ID="1725" SPOT_TARGET_ID="1749" />
+        <Edge SPOT_SOURCE_ID="1726" SPOT_TARGET_ID="1750" />
+        <Edge SPOT_SOURCE_ID="1727" SPOT_TARGET_ID="1751" />
+        <Edge SPOT_SOURCE_ID="1728" SPOT_TARGET_ID="1752" />
+        <Edge SPOT_SOURCE_ID="1729" SPOT_TARGET_ID="1753" />
+        <Edge SPOT_SOURCE_ID="1730" SPOT_TARGET_ID="1754" />
+        <Edge SPOT_SOURCE_ID="1731" SPOT_TARGET_ID="1757" />
+        <Edge SPOT_SOURCE_ID="1732" SPOT_TARGET_ID="1758" />
+        <Edge SPOT_SOURCE_ID="1733" SPOT_TARGET_ID="1759" />
+        <Edge SPOT_SOURCE_ID="1734" SPOT_TARGET_ID="1760" />
+        <Edge SPOT_SOURCE_ID="1735" SPOT_TARGET_ID="1761" />
+        <Edge SPOT_SOURCE_ID="1736" SPOT_TARGET_ID="1762" />
+        <Edge SPOT_SOURCE_ID="1737" SPOT_TARGET_ID="1763" />
+        <Edge SPOT_SOURCE_ID="1738" SPOT_TARGET_ID="1764" />
+        <Edge SPOT_SOURCE_ID="1739" SPOT_TARGET_ID="1765" />
+        <Edge SPOT_SOURCE_ID="1740" SPOT_TARGET_ID="1766" />
+        <Edge SPOT_SOURCE_ID="1741" SPOT_TARGET_ID="1767" />
+        <Edge SPOT_SOURCE_ID="1742" SPOT_TARGET_ID="1768" />
+        <Edge SPOT_SOURCE_ID="1743" SPOT_TARGET_ID="1770" />
+        <Edge SPOT_SOURCE_ID="1744" SPOT_TARGET_ID="1771" />
+        <Edge SPOT_SOURCE_ID="1745" SPOT_TARGET_ID="1772" />
+        <Edge SPOT_SOURCE_ID="1746" SPOT_TARGET_ID="1776" />
+        <Edge SPOT_SOURCE_ID="1747" SPOT_TARGET_ID="1773" />
+        <Edge SPOT_SOURCE_ID="1748" SPOT_TARGET_ID="1774" />
+        <Edge SPOT_SOURCE_ID="1749" SPOT_TARGET_ID="1775" />
+        <Edge SPOT_SOURCE_ID="1750" SPOT_TARGET_ID="1777" />
+        <Edge SPOT_SOURCE_ID="1751" SPOT_TARGET_ID="1778" />
+        <Edge SPOT_SOURCE_ID="1752" SPOT_TARGET_ID="1779" />
+        <Edge SPOT_SOURCE_ID="1753" SPOT_TARGET_ID="1780" />
+        <Edge SPOT_SOURCE_ID="1754" SPOT_TARGET_ID="1781" />
+        <Edge SPOT_SOURCE_ID="1755" SPOT_TARGET_ID="1786" />
+        <Edge SPOT_SOURCE_ID="1756" SPOT_TARGET_ID="1782" />
+        <Edge SPOT_SOURCE_ID="1757" SPOT_TARGET_ID="1783" />
+        <Edge SPOT_SOURCE_ID="1758" SPOT_TARGET_ID="1784" />
+        <Edge SPOT_SOURCE_ID="1759" SPOT_TARGET_ID="1785" />
+        <Edge SPOT_SOURCE_ID="1760" SPOT_TARGET_ID="1787" />
+        <Edge SPOT_SOURCE_ID="1761" SPOT_TARGET_ID="1788" />
+        <Edge SPOT_SOURCE_ID="1762" SPOT_TARGET_ID="1789" />
+        <Edge SPOT_SOURCE_ID="1763" SPOT_TARGET_ID="1790" />
+        <Edge SPOT_SOURCE_ID="1764" SPOT_TARGET_ID="1791" />
+        <Edge SPOT_SOURCE_ID="1765" SPOT_TARGET_ID="1792" />
+        <Edge SPOT_SOURCE_ID="1766" SPOT_TARGET_ID="1793" />
+        <Edge SPOT_SOURCE_ID="1767" SPOT_TARGET_ID="1794" />
+        <Edge SPOT_SOURCE_ID="1768" SPOT_TARGET_ID="1769" />
+      </Track>
+    </AllTracks>
+    <FilteredTracks>
+      <TrackID TRACK_ID="1" />
+    </FilteredTracks>
+  </Model>
+  <Settings>
+    <ImageData filename="dataset_deconv.xml" folder="" height="333" nframes="800" nslices="76" pixelheight="0.26" pixelwidth="0.26" voxeldepth="2.0" width="331" />
+    <InitialSpotFilter feature="QUALITY" isabove="true" value="0.0" />
+    <SpotFilterCollection />
+    <TrackFilterCollection />
+    <AnalyzerCollection>
+      <SpotAnalyzers />
+      <EdgeAnalyzers>
+        <Analyzer key="Edge target" />
+      </EdgeAnalyzers>
+      <TrackAnalyzers />
+    </AnalyzerCollection>
+  </Settings>
+</TrackMate>
