@@ -19,7 +19,7 @@ Raw images are first denoised with [Noise2Void](https://github.com/juglab/n2v) t
 ```bash
 LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiDeconvolutionTask
 ```
-> **-Deconv folder requirement**: The outputs from this step include a folder with '-Deconv' as a suffix, and the other steps use the images inside as input for segmentation. If this is not needed, a - so far still hacky - way around it is to copy the raw images to an empty folder with the same name before running the config file.
+> **'-Deconv' folder requirement**: The outputs from this step include a folder with '-Deconv' as a suffix, and the other steps use the images inside as input for segmentation. If this is not needed, i.e. if only raw data is desired to be processed, a - so far still hacky - way around it is to copy the raw images to an empty folder with the same name before running the config file.
 
 > **PSF estimation**: As expected during deconvolution, a point-spread-function (PSF) of the optics used for imaging is necessary. You can uye [Huygens PSF Distiller](https://svi.nl/Huygens-PSF-Distiller) or the [PSF extraction from python-microscopy](http://python-microscopy.org/doc/PSFExtraction.html).
 

@@ -23,9 +23,9 @@ The configuration file is subdivided into main sections
 ### **4) Cell segmentation**
     Performs cell and lumen (+ epithelium) segmentation model training and prediction tasks on image data, based on predicted nuclei segmentation.
 ### **5) Features**
-    Extracts features based on the segmented label maps
+    Extracts features based on the segmented label maps. Its output is an .h5 file containing the feature table.
 ### **6) Meshes**
-    Creates .vtk meshes based on the cell and nuclei segmentation label maps
+    Creates .vti meshes based on the cell and nuclei segmentation label maps
 ### **7) Tracking**
     Performs tracking model training and prediction tasks on image data based on existing nuclei segmentation.
 
