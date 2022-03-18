@@ -62,10 +62,10 @@ conda install -c pyviz pytables
 ```
 
 
+
 > :warning: **Cuda GPU support and Tensorflow**: we have tested LSTree using specific version for NVIDIA cudatoolkit (version 10.1) and NVIDIA CUDA® Deep Neural Network library (cuDNN) (version 7.6) libraries that work with Tensorflow 2.3. This is in accordance to the guidelines from Tensorflow, as specified their [website](https://www.tensorflow.org/install/source#gpu). Therefore it is recommended that you have the right NVIDIA driver - according [NVIDIA website](https://docs.nvidia.com/deploy/cuda-compatibility/) this should be equal or greater than 418.39. For more information please visit the [tensorflow.org](https://www.tensorflow.org/) website. 
-
-
 Considering the NVIDIA driver to be already installed, please install the cuda related libraries via:
+
 
 ```bash
 conda install cudatoolkit=10.1 cudnn=7
