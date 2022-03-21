@@ -122,7 +122,7 @@ The segmentation pipeline requires manual annotations of nuclei and lumen/epithe
 
 ### 1) Processing the example data
 
-For an easy first-time use, you can run everything in one go via a single command. This will trigger the entire workflow on two example datasets( [002-Budding](/example/data/002-Budding/) and [003-Enterocyst](/example/data/003-Enterocyst/) ) using all models trained with `intestinal organoid images` (this takes around 10 minutes with the hardware configuration we used).
+For an easy first-time use, you can run everything in one go via a single command. This will trigger the entire workflow on one example dataset ( [003-Enterocyst](/example/data/003-Enterocyst/) ) using all models trained with `intestinal organoid images` (this takes around 5 minutes with the hardware configuration we used). The other example dataset ( [002-Budding](/example/data/002-Budding) ) has already been processed for convenience. This means that if you do not have the hardware to run the Task below, you can directly check the output files from there and skip to the [webviewer](../webview/README.md) for visualizing the output.
 
 As long as the data has been cropped and lineage tree created/curated and exported via MaMuT .xml ( which is the case for the example datasets ), the entire LSTree workflow can be activated via the command below (this takes around 10 minutes with the [hardware configuration we used](LINK)):
 
