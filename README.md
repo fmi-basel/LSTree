@@ -192,6 +192,9 @@ Big thanks to the [Liberali Lab](https://liberalilab.org/) for enabling the crea
 ## Funding support
 This work was supported by EMBO (ALTF 571-2018 to G.M.), SNSF (POOP3_157531 to P.L.). This work received funding from the ERC under the European Union’s Horizon 2020 research and innovation programme (grant agreement no. 758617).
 
+---
+## How to cite
 
+If LSTree is being useful to your analysis / visualization, please do not forget to [cite it](./CITATION.cff)!
 
 
