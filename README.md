@@ -195,6 +195,6 @@ This work was supported by EMBO (ALTF 571-2018 to G.M.), SNSF (POOP3_157531 to P
 ---
 ## How to cite
 
-If LSTree is being useful to your analysis / visualization, please do not forget to [cite it](./CITATION.cff)!
+If LSTree is being useful to your analysis / visualization, please do not forget to cite it using the citation file.
 
 
