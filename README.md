@@ -118,11 +118,8 @@ En [experiment.json](/example/data/002-Budding/experiment.json) file containing 
 ```  
 ### **dataset.xml**
 
-Before poerforming segmentation and feature extraction, LSTree requires a `dataset.xml` file that has the structure of the BigDataViewer `.xml`.
-- some information is gotten from here that is necessary for running the segmentation (spacing?`?)  
-
-LINK TO DATASET FILE IN EXAMPLE DATA
-more information linbk to bdv!!
+Before performing segmentation and feature extraction, LSTree requires a `dataset.xml` file that has the structure of the BigDataViewer `.xml`.
+In the two [example datasets](/example/README.md) we have added the `.xml ` files correspondingly. For mor information on its structure, please refer to [BigDataViewer](https://imagej.net/plugins/bdv/).
 
 
 ## Folder structure
@@ -177,7 +174,7 @@ General parameters for each tasks are configured through a global configuration 
 
 
 ## Implementation details
-- The workflow and its tasks'dependencies are managed using [Luigi](https://github.com/spotify/luigi).
+- The workflow and its tasks' dependencies are managed using [Luigi](https://github.com/spotify/luigi).
 - Processing steps are batched per movie/channel to amortize tensorflow model initialization.
 - Due to current tensorflow limitations, tensorflow should not be imported (directly or indirectly) in the main process but in the `run()` function of each Luigi task (i.e. in sub-processes spawned by Luigi)
 - Negative labels in training annotations are considered "not labeled" and do not contribute to the training loss (partial annotations)
@@ -186,7 +183,7 @@ General parameters for each tasks are configured through a global configuration 
 ---
 ## Acknowledgements
 
-Big thanks to the [Liberali Lab](https://liberalilab.org/) for enabling the creation of these tools, the support and help with the initial development, discussions and future plans of LSTree. Also to Ko Sugawara for the nice collaboration regarding the utilization of `Elephant` and its integration within the `LSTree` umbrella. Thanks to Vladimir Ulman for helpful discussions regarding tracking in general, and Markus Rempfler forimportant initial support with RDCNet implementations. Also big thanks to Tim-Oliver for insightful discussions and help with debugging. 
+Big thanks to the [Liberali Lab](https://liberalilab.org/) for enabling the creation of these tools, the support and help with the initial development, discussions and future plans of LSTree. Also to Ko Sugawara for the nice collaboration regarding the utilization of `Elephant` and its integration within the `LSTree` umbrella. Thanks to Vladimir Ulman for helpful discussions regarding tracking in general, and Markus Rempfler for important initial support with RDCNet implementations. Also big thanks to Tim-Oliver for insightful discussions and help with debugging. 
 
 ---
 ## Funding support
