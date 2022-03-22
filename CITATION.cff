@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: de Medeiros
+    given-names: Gustavo
+    orcid:  https://orcid.org/0000-0001-5877-3012
+  - family-names: Ortiz
+    given-names: Raphael
+    orcid:  
+  - family-names: Strnad
+    given-names: Petr
+    orcid:   https://orcid.org/0000-0002-2515-0385 
+  - family-names: Boni
+    given-names: Andrea
+    orcid:
+  - family-names: Moos
+    given-names: Franziska
+    orcid:
+  - family-names: Repina
+    given-names: Nicole
+    orcid:   https://orcid.org/0000-0003-2229-5084 
+  - family-names: Chalet-Meylan
+    given-names: Ludivine
+    orcid:
+  - family-names: Maurer
+    given-names: Francisca
+    orcid:
+  - family-names: Liberali
+    given-names: Prisca
+    orcid:   https://orcid.org/0000-0003-0695-6081
+title: "Multiscale light-sheet organoid imaging framework"
+version: 1.0
+doi: 10.1101/2021.05.12.443427 
+date-released: 2021-05-12
+
+
+
+
