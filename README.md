@@ -1,5 +1,6 @@
+<p align="center">
 <img src="./docs/Repo_visual_outline2.png" width="900"/><br>
-
+</p>
 
 # Introduction - LSTree
 
