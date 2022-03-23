@@ -61,5 +61,8 @@ LUIGI_CONFIG_PATH=./config.cfg luigi --local-scheduler --module lstree MultiAggr
 - **XSegmentationTask** : performs the prediction using the trained model.
 ---
 - **MultiXSegmentationTask** ( only Nuclei, Cell ) : performs prediction using the trained model with corresponding `suffix` on all of the datasets present in the list of paths `movie_dirs`. Prediction should be performed on data located in the `ch_subdir` and the ouput written on the defined `out_subdir` folder.
+---
 
+
+Complementary informaotion can be found directly in the [config.cfg](./config.cfg) file.
 <!-- Add all of the other tasks! -->

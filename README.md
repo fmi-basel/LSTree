@@ -1,3 +1,5 @@
+<img src="./docs/Repo_visual_outline2.png" width="700"/><br>
+
 
 # Introduction - LSTree
 
@@ -102,14 +104,14 @@ En [experiment.json](/example/data/002-Budding/experiment.json) file containing 
 
 ```
 {
-    "mag": 25,                  # Magnification (for getting the right PSF file)
+    "mag": 25,                  # magnification (for getting the right PSF file)
     "time_interval": 0.1667,    # value in hours
-    "spacing": [
+    "spacing": [                # values in µm
         2,                      # Z
         0.26,                   # Y
         0.26                    # X
     ],
-    "wavelengths": {            # in nanometers
+    "wavelengths": {            # values in nm
         "Channel0": 488,        
         "Channel1": 561,
         "Channel2": 638
@@ -159,9 +161,7 @@ A certain data structure is expected so that the workflow can run smoothly: it s
 
 Generated outputs will appear as new sub-folders (E.g. Channel0-Deconv, Channel1-Deconv, nuclei_segmentation, cell_segmentation, etc.).
 
-> :warning: **Folder structure organisation**: 
-
-
+For more information on the way this works in practice, please visit the [example](/example/README.md) section!
 
 ## Configuration file
 General parameters for each tasks are configured through a global configuration file [config.cfg](config.cfg), which is initially set up to run the [example](example/README.md) datasets.
