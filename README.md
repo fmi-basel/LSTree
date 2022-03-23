@@ -1,4 +1,4 @@
-<img src="./docs/Repo_visual_outline2.png" width="700"/><br>
+<img src="./docs/Repo_visual_outline2.png" width="900"/><br>
 
 
 # Introduction - LSTree
