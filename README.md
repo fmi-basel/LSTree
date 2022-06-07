@@ -48,7 +48,7 @@ The size of the deep learning models might need to be adjusted based on the avai
 
 ## Installation steps
 
-It is recommended to create a new python environment and install visualization libraries and cuda (GPU support) with conda. First create the new environment:
+It is recommended to create a new python environment and install visualization libraries and cuda (GPU support) with conda. For more information on how to install and use (mini)conda please visit the [official conda documentation](https://docs.conda.io/en/latest/miniconda.html). First create the new environment:
 
 ```bash
 conda create -n lstree python=3.7
@@ -60,7 +60,7 @@ conda activate lstree
 Important: currently setup.py uses setuptools in order to install all the packages. Since pytables uses Distutils, we need to install it by hand:
 
 ```bash
-conda install -c pyviz pytables
+conda install -c pyviz pytables==3.6.1
 ```
 
 
