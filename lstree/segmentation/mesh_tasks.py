@@ -44,7 +44,7 @@ def rgb_stack_to_grid(rgb, spacing, bounds=None):
     grid.origin = (np.array(origin) * spacing)[::-1]
     grid.spacing = spacing[::-1]
 
-    grid.point_arrays["values"] = rgb.reshape(-1, 3, order="F")
+    grid.point_data["values"] = rgb.reshape(-1, 3, order="F")
 
     return grid
 
