@@ -4,6 +4,8 @@
 [![DOI](https://zenodo.org/badge/360927900.svg)](https://zenodo.org/badge/latestdoi/360927900)
 
 
+> :warning: **2023 Refactor branch**: this branch is related to all the current changes needed to make LSTree run considering updated packages. Should be considered as a dev branch until merged to *main* . For current details on installation instructions please check Issues [11](https://github.com/fmi-basel/LSTree/issues/11)
+
 
 <img src="./docs/Repo_visual_outline2.png" width="700"/><br>
 
